@@ -4,9 +4,8 @@ author: Simon Anderson
 date: 2019-08-08 14:10:00 +0800
 categories: [MATLAB, Applied]
 tags: [writing]
-image: /_preview/MATLAB/1_GeographyImage.png
+image: /assets/img/MATLAB/1_Preview.png
 ---
-![img](/_preview/MATLAB/1_GeographyImage.png)
 
 ## 1. What is A\* Algorithm
 
@@ -65,7 +64,7 @@ Rimmicu로 넘어와보니 Pitesti가 낮은 값을 받았고 Pitesti를 도착�
 
 `2.3.    MATLAB code` 
 
-```yaml
+```java
 ---
 clc, clear
 import java.util.LinkedList
