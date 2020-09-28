@@ -2,8 +2,8 @@
 
 title: kakao maps open api 실습해보자
 author: Woogi
-date: 2019-08-08 14:10:00 +0800
-categories: [MATLAB, Applied]
+date: 2020-09-27 18:43:00 +0800
+categories: [OpenAPI, KAKAO]
 tags: [open api]
 image: /assets/img/kakao/map_1.png
 ---

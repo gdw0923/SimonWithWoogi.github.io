@@ -1,7 +1,7 @@
 ---
 title: MATLAB 탐색 알고리즘을 이해하여 식인종 문제를 응용해보자
 author: Simon Anderson
-date: 2019-08-08 14:10:00 +0800
+date: 2020-09-25 14:10:00 +0800
 categories: [MATLAB, Applied]
 tags: [MATLAB,Java, DeepLearning, Algorithm, DataStructure]
 image: /assets/img/MATLAB/2_Preview.png
@@ -88,7 +88,7 @@ Search를 얘기하기 전에 Tree와 Graph에 대해서 먼저 설명합니다.
 $$
 Max(Child node) = (Passenger! * Kinds) - Passenger
 $$
-  
+
 $$
 Max(n) = (5! * 2) - 5 = (5 * 4 * 3 * 2 * 1) * 2 - 5 = 240 - 5 = 235
 $$
