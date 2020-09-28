@@ -84,13 +84,15 @@ Search를 얘기하기 전에 Tree와 Graph에 대해서 먼저 설명합니다.
 ![img](/assets/img/MATLAB/2_11.png)
 
 식인종과 선교사를 각 30명씩 만들었구요. 배는 최대 5명을 실을 수 있습니다. 앞서 말했듯 `Child node`의 수를 앞으로 생길 경우의 수라고 보겠습니다. 그렇다면 최대 5명을 태울 수 있는 경우의 수는 235입니다. 수식은 아래와 같습니다.  그리고 `Tree Depth`를 결정하는 최대 반복 수는 제법 많겠죠?
+
 $$
 Max(Child node) = (Passenger! * Kinds) - Passenger
 $$
-
+  
 $$
 Max(n) = (5! * 2) - 5 = (5 * 4 * 3 * 2 * 1) * 2 - 5 = 240 - 5 = 235
 $$
+
 그래서 제가 미리 돌려봤습니다. 단순히 `BFS(Breadth First Search)`로 했을 때는 41061번째에 모두 옮기더라구요.
 
 ![img](/assets/img/MATLAB/2_12.png) 
