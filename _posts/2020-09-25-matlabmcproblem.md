@@ -5,6 +5,7 @@ date: 2020-09-25 14:10:00 +0800
 categories: [MATLAB, Applied]
 tags: [MATLAB,Java, DeepLearning, Algorithm, DataStructure]
 image: /assets/img/MATLAB/2_Preview.png
+math: true
 ---
 
 ## <span style="color:darkblue">1. About the search</span>

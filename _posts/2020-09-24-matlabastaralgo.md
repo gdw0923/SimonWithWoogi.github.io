@@ -6,6 +6,7 @@ date: 2020-09-24 17:30:00 +0800
 categories: [MATLAB, Applied]
 tags: [MATLAB, Python, java, Algorithm, Search, AI, DeepLearning, Optimization, Heuristics]
 image: /assets/img/MATLAB/1_Preview.png
+math: true
 ---
 
 ## <span style="color:darkblue">1. What is A\* Algorithm</span>
