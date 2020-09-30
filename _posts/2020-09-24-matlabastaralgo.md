@@ -2,9 +2,9 @@
 
 title: MATLAB A* Algorithm을 실습하고 지도 데이터에 그리기
 author: Simon Anderson
-date: 2019-08-08 14:10:00 +0800
+date: 2020-09-24 17:30:00 +0800
 categories: [MATLAB, Applied]
-tags: [writing]
+tags: [MATLAB, Python, java, Algorithm, Search, AI, DeepLearning, Optimization, Heuristics]
 image: /assets/img/MATLAB/1_Preview.png
 ---
 
