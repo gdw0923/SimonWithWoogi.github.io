@@ -261,7 +261,6 @@ end
 ### <span style="color:darkblue">3.3. MATLAB code 전문</span>
 
 ```matlab
-%201820651 안상현 인공지능 8-Puzzles 문제
 clear, clc
 import java.util.LinkedList
 
