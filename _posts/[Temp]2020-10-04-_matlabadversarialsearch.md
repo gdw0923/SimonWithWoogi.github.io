@@ -20,11 +20,11 @@ math: true
 
 1. `Multiagent environments`
 2. `Initial states`
-3. `Player(s)`
-4. `Action(s)`
-5. `Result(s, a)`
-6. `Terminal-test(s)`
-7. `Utility(s, p)`
+3. `Player`
+4. `Action`
+5. `Result`
+6. `Terminal-test`
+7. `Utility`
 
 ---
 
@@ -34,29 +34,47 @@ math: true
 
 [이미지 feasible과 infeasible한 경우]
 
-#### <span style="color:darkblue">1.1.2. Agent(s)</span>
+#### <span style="color:darkblue">1.1.2. Agent</span>
 
 `Multiagent environments`는 `상호작용(Interaction)`하는 둘 이상의 `Agent`가 있어야합니다.  `Agent`는 `Player`이면서 `게임에 임하는 사람`이라고 할 수 있습니다. `Agent(s)`란 `State - s`에서 움직일 `Agent`에 대해서 정의를 얘기합니다.
 
-#### <span style="color:darkblue">1.1.3. Action(s)</span>
+#### <span style="color:darkblue">1.1.3. Action</span>
 
 `Action`은 규칙이라 할 수 있습니다. 더 얘기하면 `Action`은 움직임을 표현한 집합입니다. 규칙과 움직임, 게임에서는 두 단어가 관련이 있습니다. 게임 속에서는 모든 `Agents`가 규칙에 의한 움직임만을 가집니다. 오목과 비유한다면 한 턴에 돌을 두, 세개 놓을 수 없으니 `Action`에는 한 개의 돌과 관련된 움직임이 들어가 있죠. 흰 돌을 두거나, 흑 돌을 두거나 입니다.
 
 `Action(s)`란 `State - s`에서 움직임을 표현한 집합입니다.
 
-#### <span style="color:darkblue">1.1.4. Result(s, a)</span>
+#### <span style="color:darkblue">1.1.4. Result</span>
 
+`Result`는 `Action`이후의 결과를 정의합니다. `Action`에 따라 유동적으로 변하므로 `Transition model`에 속합니다.
 
+#### <span style="color:darkblue">1.1.5. Terminal-test</span>
 
-#### <span style="color:darkblue">1.1.5. Terminal-test(s)</span>
+종료 상태를 확인합니다.
 
-#### <span style="color:darkblue">1.1.6. Utility(s, p)</span>
+#### <span style="color:darkblue">1.1.6. Utility</span>
 
-
+점수에 해당합니다. 혹은 목표함수이며 이를 수치화된 형태로 얘기합니다.
 
 ### <span style="color:darkblue">1.2. Mini-max algorithm</span>
 
-기하학적으로 
+#### <span style="color:darkblue">1.2.1. Game tree</span>
+
+`Adversarial Search`를 얘기할 땐 `Game`을, `Game` 을 설명할 땐`Game tree`가 따라옵니다. 일반적인 `tree`라고 생각해도 됩니다. 크게 다르지 않습니다. 그러나 `Level`별로 자신, 상대방의 `state`를 번갈아서 표현합니다. 아래를 보시면 `tic-tac-toe`의 `Game tree`구조입니다.
+
+#### <span style="color:darkblue">1.2.2. Mini-max function</span>
+
+`Mini-max algorithm`에서 사용되는 `Optimal strategy`는 아래의 수식에 의하여 행동이 결정됩니다.
+$$
+Minimax(s)=\begin{Bmatrix} 
+utlity(s)\qquad if\ \ terminal-test(s)\\
+max_a\ Minimax(result(s,a))\qquad if\ \ player(s) = max\\
+min_a\ Minimax(result(s,a))\qquad if\ \ player(s) = min
+\end{Bmatrix}
+$$
+`Min` 노드에서는 `Sibling node`포함 `min`값을 선택합니다. `Min`노드의 `level`에는 상대방이 존재하고, `Max`노드에는 자신을 두며 `Max`값을 고릅니다.
+
+
 
 ## <span style="color:darkblue">2. Implement</span>
 
