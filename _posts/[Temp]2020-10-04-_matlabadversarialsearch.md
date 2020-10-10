@@ -74,15 +74,29 @@ min_a\ Minimax(result(s,a))\qquad if\ \ player(s) = min
 $$
 `Min` 노드에서는 `Sibling node`포함 `min`값을 선택합니다. `Min`노드의 `level`에는 상대방이 존재하고, `Max`노드에는 자신을 두며 `Max`값을 고릅니다.
 
+말단 노드에서부터 위 계산식에 따라 점점 `Root node`를 향하며, 반복하여 올라가다보면 최적의 `root node`의 값이 결정됩니다.
 
+[이미지 설명]
+
+이상함을 느끼신 분이 있나요? 
+
+#### <span style="color:darkblue">1.2.2. Look-ahead</span>
+
+`Tree`는 기본적으로 `Root node`에서부터, `Child node`를 만들어가며 `Optimal solution`을 찾습니다. 그런데 `Adversarial Search`를 설명하며 `Game tree`의 구조는 말단에서 올라오는 `Bottom-up`의 형태를 띕니다. 그럼 구현하는 입장에서는 마음에 걸리는 게 있죠
+
+어떻게? 얼마나? `Game Tree`의 `Depth`를 미리 알아야합니다. 수를 내다볼 때 `Look-ahead`라는 용어를 씁니다. 결국 모든 수를 다 보면 좋지만 매 턴마다 제한시간이 있는 경우 제한시간안에 응답을 보장못할 수 있습니다. 또한`Look-ahead`를 적게 설정해 첫 수부터 보지 못하면 전혀 쓸모없는 것일까요? 전혀 없을 수도 있지만, 있기는 합니다. 이러나 저러나 많은 수를 내다보는 게 좋긴 하다고 합니다.
+
+`Look-ahead`는 많을 수록 좋습니다.  
 
 ## <span style="color:darkblue">2. Implement</span>
 
 ### <span style="color:darkblue">2.1. m,n,k-game</span>
 
-실
+`m,n,k-game`은 `mxn`의 행렬에 `k`의 수를 맞추는 게임입니다. 예를 들어서 저희가 구현할 `Tic-Tac-Toe`는 3행, 3열에서 3개로 구성된 1줄을 맞추는 게임입니다. 그러니 3,3,3 game이라 할 수 있습니다. 
 
 ### <span style="color:darkblue">2.2. Tic-Tac-Toe</span>
+
+두명이서 진행하는 게임이며 O와 X를 각 한명이 맡아 가로, 세로, 대각선 중 한 줄을 만드는 게임입니다. 그리고 선의 접점에 돌을 놓는 바둑이나 오목과는 다르게 면을 사용합니다.
 
 ### <span style="color:darkblue">2.2. MATLAB code description</span>
 
