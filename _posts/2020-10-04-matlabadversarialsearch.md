@@ -86,7 +86,7 @@ $$
 
 이상함을 느끼신 분이 있나요? 
 
-#### <span style="color:darkblue">1.2.2. Look-ahead</span>
+#### <span style="color:darkblue">1.2.3. Look-ahead</span>
 
 `Tree`는 기본적으로 `Root node`에서부터, `Child node`를 만들어가며 `Optimal solution`을 찾습니다. 그런데 `Adversarial Search`를 설명하며 `Game tree`의 구조는 말단에서 올라오는 `Bottom-up`의 형태를 띕니다. 그럼 구현하는 입장에서는 마음에 걸리는 게 있죠
 
