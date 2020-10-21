@@ -12,7 +12,7 @@ image: /assets/img/kakao/voice_1.png
 
 <span style="color:darkblue">`1.1. 음성 Api`</span>
 
-카카오에서 제공하는 음성 API의 주요 기능으로는 사람의 음성정보를 이해하여 문자로 변환하거나, 문자를 음성정보로 항성하는 2가지 정도의 기능으로 
+카카오에서 제공하는 음성 API의 주요 기능으로는 사람의 음성정보를 이해하여 문자로 변환하거나, 문자를 음성정보로 합성하는 2가지 정도의 기능으로 
 
 제공합니다.
 
@@ -31,7 +31,7 @@ using System.IO;
 using System.Net;
 
 string url = "https://kakaoi-newtone-openapi.kakao.com/v1/recognize"; // HOST 및 URL
-string rest_api_key = "??????????????"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여            
+string rest_api_key = "??????"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여            
 string FiePath = @"C:\Temp\heykakao.wav"; ; // 파일경로
 
 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url); // 해당 URL로 네트웍을 만든다
@@ -72,11 +72,11 @@ using (WebResponse response = request.GetResponse()) // 보낸데이터를 기�
 
 이제 이걸 가공해서 출력해주면 되겠습니다.
 
-그러나 기본 노트북으로 음성을 녹음해서 전송하니 에러코드 -4가 (결과값 없음)이 리턴되더군여 음성파일을 만든때 
+그러나 기본 노트북으로 음성을 녹음해서 전송하니 에러코드 -4가 (결과값 없음)이 리턴되더군여 음성파일을 만들때 
 
-중요한 규칙인  음성 데이터는 Mono channel, 16000 Hz samplerate, 16 bit depth인 `RAW PCM` 포맷만 지원합니다. 을 
+중요한 규칙인  음성 데이터는 Mono channel, 16000 Hz samplerate, 16 bit depth인 `RAW PCM` 포맷을 
 
-지켜서 파일을 보내야 할거 같습니다.
+지켜서 파일을 보내야 결과값을 제대로 받을수 있겠네요
 
 
 
@@ -90,7 +90,7 @@ using System.Net;
 
 string text = "하헤히호후 카카오"; // 음성합성할 문자값
 string url = "https://kakaoi-newtone-openapi.kakao.com/v1/synthesize"; // HOST 및 URL
-string rest_api_key = "eebe73a9a75343e52c3201927c69fce3"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여
+string rest_api_key = "??????"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여
 string VoiceName = "WOMAN_DIALOG_BRIGHT"; // attribute value(음성 선택)
 string FiePath = @"C:\Temp\heykakao.wav"; ; // 파일경로
 
@@ -123,5 +123,17 @@ using (Stream input = response.GetResponseStream()) // 받은 값을 스트림�
 ![img](/assets/img/kakao/voice_2.png)
 
 이런식으로 파일로 전송이 됩니다.
+
+그리고 
+
+VoiceName 변수에 밑의 옵션을 바꿔서 넣어주면 목소리가 선택된것으로 생성되어 옵니다.
+
+WOMAN_READ_CALM = 차분한 여성 목소리
+
+MAN_READ_CALM = 차분한 남성 목소리
+
+WOMAN_DIALOG_BRIGHT = 밝은 여성 목소리
+
+MAN_DIALOG_BRIGHT = 밝은 남성 목소리  
 
 감사합니다.
