@@ -101,7 +101,7 @@ GET이나 POST 어떤 방식을 쓰든 결과값은 같으니 원하시는 방�
 /////////////GET 방식
 string sss = "query=한글"; // 보낼 데이터를 xml 형식으로 만들어주고
 string url = "https://dapi.kakao.com/v3/translation/language/detect?" + sss; // HOST 및 URL
-string rest_api_key = "eebe73a9a75343e52c3201927c69fce3"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여            
+string rest_api_key = "????????????"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여            
 
 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url); // 해당 URL로 네트웍을 만든다
 request.Headers.Add("Authorization", "KakaoAK " + rest_api_key); // 헤더에 옵션값을 추가한다.
@@ -123,7 +123,7 @@ using (WebResponse response = request.GetResponse()) // 보낸데이터를 기�
 
 /////////////POST 방식
 string url = "https://dapi.kakao.com/v3/translation/language/detect"; // HOST 및 URL
-string rest_api_key = "eebe73a9a75343e52c3201927c69fce3"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여            
+string rest_api_key = "??????????"; // 내 어플리케이션 => 어플선택 => 기본정보의 앱 키 > REST Key 값 부여            
 
 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url); // 해당 URL로 네트웍을 만든다
 request.Headers.Add("Authorization", "KakaoAK " + rest_api_key); // 헤더에 옵션값을 추가한다.
