@@ -112,7 +112,7 @@ figure
 probplot(data);
 ```
 
-![img](/assets/img/MATLAB_Quality/1_6.png)
+![img](/assets/img/MATLAB_Quality/1_6.jpg)
 
 ### <span style="color:darkblue">2.2. histfit</span>
 
@@ -129,7 +129,7 @@ xlabel('Value')
 ylabel('Frequency')
 ```
 
-![img](/assets/img/MATLAB_Quality/1_7.png)
+![img](/assets/img/MATLAB_Quality/1_7.jpg)
 
 ### <span style="color:darkblue">2.3. capability</span>
 
@@ -144,7 +144,7 @@ ylabel('probability')
 grid on
 ```
 
-![img](/assets/img/MATLAB_Quality/1_8.png)
+![img](/assets/img/MATLAB_Quality/1_8.jpg)
 
 ### <span style="color:darkblue">2.4. normspec</span>
 
@@ -157,9 +157,9 @@ figure
 p = normspec([LSL USL],mu,sigma,'outside')
 ```
 
-![img](/assets/img/MATLAB_Quality/1_9.png)
+![img](/assets/img/MATLAB_Quality/1_9.jpg)
 
-![img](/assets/img/MATLAB_Quality/1_10.png)
+![img](/assets/img/MATLAB_Quality/1_10.jpg)
 
 ### <span style="color:darkblue">2.5. result</span>
 
@@ -182,9 +182,9 @@ ylabel('probability')
 grid on
 ```
 
-![img](/assets/img/MATLAB_Quality/1_11.png)
+![img](/assets/img/MATLAB_Quality/1_11.jpg)
 
-![img](/assets/img/MATLAB_Quality/1_12.png)
+![img](/assets/img/MATLAB_Quality/1_12.jpg)
 
 ### <span style="color:darkblue">2.6. MATLAB code 전문</span>
 
