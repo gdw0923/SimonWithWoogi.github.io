@@ -59,20 +59,16 @@ math: true
 
 
 $$
-\begin{align}
-공정능력지수(양쪽\ 규격이\ 주어진\ 경우)\\ 
+\begin{array}{l}
+\text{공정능력지수(양쪽 규격이 주어진 경우)}\\ 
 \mu = 평균, \ \sigma=표준편차,\ USL,LSL=상한선,하한선 \\
 Cp={USL-LSL \over 6\sigma} \\
 Cpk=min({USL-\mu \over 3\sigma},\ {\mu-LSL \over 3\sigma}) \\
 Cpm = {USL-LSL \over 6\sqrt{\sigma^2+(\mu-m)^2}} \\
-|  \\
 cf. biased\ case \qquad
 k={|m-\mu| \over (USL-LSL)/2} \qquad Cpk = (1-k)Cp
-\end{align}
+\end{array}
 $$
-
-
-
 
 
 ### <span style="color:darkblue">1.2. Long/Short Term Process Capability</span>
