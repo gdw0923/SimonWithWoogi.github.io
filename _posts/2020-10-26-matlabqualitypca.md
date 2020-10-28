@@ -57,6 +57,7 @@ math: true
 |           0.67 > Cp           | 공정을 즉시 중단하고 불량에 대한 원인규명 및 품질 개선에 대한 대책 마련 필요 |
 
 $$
+\begin{align}
 공정능력지수(양쪽\ 규격이\ 주어진\ 경우)\\ 
 \mu = 평균, \ \sigma=표준편차,\ USL,LSL=상한선,하한선 \\
 Cp={USL-LSL \over 6\sigma} \\
@@ -65,6 +66,7 @@ Cpm = {USL-LSL \over 6\sqrt{\sigma^2+(\mu-m)^2}} \\
 |  \\
 cf. biased\ case \qquad
 k={|m-\mu| \over (USL-LSL)/2} \qquad Cpk = (1-k)Cp
+\end{align}
 $$
 
 
@@ -87,7 +89,7 @@ $$
 
 아래의 데이터를 가지고 구현을 할 것입니다. `공정능력`에 대한 내용이기에 코드의 메커니즘도 따로없고 데이터 분석도 크게 필요없기에 소스 산출물로서만 얘기를 하겠습니다. 또한 한 부품군에 대한 내용이기에 관리도를 통한 공정능력분석이 아닙니다. 다음 포스팅에서 관리도 설명과 함께 공정능력분석을 얘기하겠습니다.
 
-![img](/assets/img/MATLAB_Quality/1_13.png)
+![img](/assets/img/MATLAB_Quality/1_data.png)
 
  **MATLAB 복사하기 쉽게된 전문은 제일 아래에 있습니다.** 지금부터는 설명입니다.
 
@@ -102,7 +104,7 @@ LSL = 70;
 
 ### <span style="color:darkblue">2.1. probplot</span>
 
-가상선의 기울기가 대각선에 가깝고 중앙으로 밀집되어 있는 지 확인합니다.
+가상선의 기울기가 대각선에 가깝고 중앙으로 밀집되어 있는 지 확인합니다. 데이터 컬럼명은 "Data"로 `MATLAB` 테이블 객체에서 `{}`는 `Table`이 아닌 요소자체를 가져옵니다.
 
 ```matlab
 ProcTable = readtable("D:\data.xlsx"); % 데이터 경로로 잡아주세요
