@@ -1,4 +1,5 @@
 ---
+
 title: MATLAB 공정능력분석을 이해하고 시각화해보자
 author: Simon Anderson
 date: 2020-10-26 22:37:00 +0800
@@ -56,6 +57,7 @@ math: true
 |      1.00 > Cp >=  0.67       | 공정능력이 부족함, 불량 발생에 따른 공정 개선 필요           |
 |           0.67 > Cp           | 공정을 즉시 중단하고 불량에 대한 원인규명 및 품질 개선에 대한 대책 마련 필요 |
 
+
 $$
 \begin{align}
 공정능력지수(양쪽\ 규격이\ 주어진\ 경우)\\ 
@@ -68,6 +70,8 @@ cf. biased\ case \qquad
 k={|m-\mu| \over (USL-LSL)/2} \qquad Cpk = (1-k)Cp
 \end{align}
 $$
+
+
 
 
 
