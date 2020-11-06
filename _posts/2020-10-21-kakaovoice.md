@@ -80,9 +80,9 @@ using (WebResponse response = request.GetResponse()) // 보낸데이터를 기�
 
 
 
-## <span style="color:darkblue">2. 음성 합성</span>
+## <span style="color:darkblue">3. 음성 합성</span>
 
-<span style="color:darkblue">`2.1. Code description`</span>
+<span style="color:darkblue">`3.1. Code description`</span>
 
 ```jsp
 using System.IO;
@@ -116,7 +116,7 @@ using (Stream input = response.GetResponseStream()) // 받은 값을 스트림�
 }
 ```
 
-<span style="color:darkblue">`2.2. Result`</span>
+<span style="color:darkblue">`3.2. Result`</span>
 
 음성 합성은 파일로 저장이 되는데 이제 이걸 가공해서 출력해주면 되겠습니다.
 
