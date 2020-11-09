@@ -93,9 +93,9 @@ GET이나 POST 어떤 방식을 쓰든 결과값은 같으니 원하시는 방�
 
 ![img](/assets/img/kakao/translate_1.png)
 
-## <span style="color:darkblue">2. 문장 감지</span>
+## <span style="color:darkblue">3. 문장 감지</span>
 
-<span style="color:darkblue">`2.1. Code description`</span>
+<span style="color:darkblue">`3.1. Code description`</span>
 
 ```c#
 /////////////GET 방식
@@ -152,7 +152,7 @@ using (WebResponse response = request.GetResponse()) // 보낸데이터를 기�
 }
 ```
 
-<span style="color:darkblue">`2.2. Result`</span>
+<span style="color:darkblue">`3.2. Result`</span>
 
 결과값 : {"language_info":[{"code":"kr","name":"Korean","confidence":1.0}]}
 
