@@ -12,4 +12,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: {{ '/sitemap.xml' | relative_url | prepend: site.url }}
+Sitemap: http://simonwithwoogi.github.io/sitemap.xml
