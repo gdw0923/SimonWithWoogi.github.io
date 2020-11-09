@@ -8,13 +8,14 @@ image: /assets/img/MATLAB/6_Preview.png
 math: true
 ---
 
+[전편:Forward propagation](https://simonwithwoogi.github.io/SimonWithWoogi.github.io/posts/matlabneuralnet2/)
+
 <span style="color:red">이번 포스팅에는 귀여운 그림이 전혀 없습니다.</span>
 
 ## <span style="color:darkblue">1. Forward propagation</span>
 
-[Forward propagation]: https://simonwithwoogi.github.io/SimonWithWoogi.github.io/posts/matlabneuralnet1/	"Neuralnet1"
-
 ![img](/assets/img/MATLAB/5_11.png)
+
 
 $$
 \begin{array}{l}
@@ -43,6 +44,8 @@ w^2_{21}
 
 \end{array}\\
 $$
+
+
 구조는 이렇습니다. 사실 `MLP` 는 간단하지 않기때문에 처음 `순전파(forward propagation)` 부터 설명하겠습니다. 순서대로 계산한다는 개념이죠. 이번에는 `input node` 가 2개니까 `weight` 를 모두 0.5씩 걸어두고 진행해보겠습니다. `c와 b` 는 `bias` 개념이니까 1부터 시작하겠습니다. 계산은 `MATLAB`으로 합니다.
 
 ![img](/assets/img/MATLAB/5_12.png)
@@ -111,6 +114,8 @@ $$
 \end{array}
 $$
 `Delta rule` 을 같이 이해하셔도 됩니다. 단어만 다르게 쓸 뿐이지. 개념적인 부분은 똑같습니다. 근데 왜 `Delta` 일까요. `Gradient descent` 처럼 변화량을 보기 때문이죠. `Delta rule` 은 아래와 같은 수식으로 정의합니다. 다만 이건 수식일 뿐이지 `기울기` 에 집중하는 것도 똑같고 `Cost function` 을  `Learning Error` 로 얘기합니다. 좀 더 `인공지능스러운` 단어로 전환한 것이죠. 추가로 `Delta function` 에서는 실제 값을 알 수 없을 때, 즉 중간층에서 적용합니다.
+
+
 $$
 \begin{array}{l}
 \text{Delta rule}\\

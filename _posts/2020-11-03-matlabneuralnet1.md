@@ -1,4 +1,5 @@
 ---
+
 title: MATLAB Neural Network를 이해하고 SLP MLP의 학습원리를 이해해보자(1)!
 author: Simon Anderson
 date: 2020-11-03 23:07:00 +0800
@@ -96,6 +97,8 @@ $$
 그러니까, 양수면 1을 만들어주고, 0이면 0, 음수면 -1을 만들어주는 부호화 함수입니다. 그런데 이런 부호화 함수를 써도 우리는 `Y (Predict)` 가 양수니까 다 1이 나오겠죠?
 
 `bias` 를 0.3과 0.5사이 구간인 0.4를 붙이겠습니다.
+
+
 $$
 \begin{array}{l}
 Y\ =\ sign(\sum_{i=1}^3 0.333\cdot X_i - 0.4)
@@ -131,6 +134,8 @@ $$
 ![img](/assets/img/MATLAB/5_11.png)
 
 아래는 수식입니다.
+
+
 $$
 \begin{array}{l}
 h_1\ =\ w^2_{11}x_1+w^2_{21}x_2+c_1\\
@@ -158,6 +163,8 @@ w^3_{21}
 
 \end{array}\\
 $$
+
+
 구조는 이렇습니다. 사실 `MLP` 는 간단하지 않기때문에 처음 `순전파(forward propagation)` 부터 설명하겠습니다. 순서대로 계산한다는 개념이죠. 이번에는 `input node` 가 2개니까 `weight` 를 모두 0.5씩 걸어두고 진행해보겠습니다. `c와 b` 는 `bias` 개념이니까 1부터 시작하겠습니다. 계산은 `MATLAB`으로 합니다.
 
 ![img](/assets/img/MATLAB/5_12.png)
@@ -183,6 +190,7 @@ $$
 
 ### <span style="color:darkblue">2. Backpropagation</span>
 
-다음부터는 `backpropagation` 설명입니다.
+다음부터는 `backpropagation` 설명입니다. 
 
-[Back propagation]: https://simonwithwoogi.github.io/SimonWithWoogi.github.io/posts/matlabneuralnet2/	"Neuralnet2"
+[backpropagation](https://simonwithwoogi.github.io/SimonWithWoogi.github.io/posts/matlabneuralnet2/)
+
