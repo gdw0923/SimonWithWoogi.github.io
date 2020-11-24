@@ -8,4 +8,13 @@ title: About
 # MIT License
 ---
 
-> **Note**: 여유가 있다면 이 칸을 작성하겠지만, 아주 쉬운 정보 공유를 통해 모두가 쉽게 이해하고 사용하는 세상이 오길 바랍니다.
+> **Note**: 기술 문의 : simon.anderson.tech@gmail.com
+>
+> 이직 및 취업 고민상담 : simon.anderson.couns@gmail.com
+
+---
+
+혹시 우울하거나 막막하다면, 어떤 메일이든 상관없으니 메일주세요. 
+
+---
+
