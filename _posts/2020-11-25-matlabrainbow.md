@@ -159,7 +159,7 @@ teds = augmentedImageDatastore([30 30], teds);
 
 ### <span style="color:darkblue">1.6 Design perceptron</span>
 
-![img](/assets/img/MATLAB/8_3.png)
+![img](/assets/img/MATLAB/8_3.PNG)
 
 `Layer`는 `Multi Layer Perceptron`으로 구성했습니다. `Input layer` 1개, `Hidden layer` 1개, `Output layer` 1개, `Activation function`은 `softmax`로 설정했습니다.
 
