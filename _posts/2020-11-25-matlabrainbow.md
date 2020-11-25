@@ -287,7 +287,7 @@ mynet = trainNetwork(trds, layers, opts);
 ```
 ![img](/assets/img/MATLAB/8_9.png)
 
-아 유감스럽지만 `navy`를 잘 구분못하네요
+좀 나아지긴 했습니다만, `green이 yellow로 보인다고하네요`. 또한  `blue, navy`를 똑바로 구분 못합니다.
 
 ### <span style="color:darkblue">1.10. Set parameter</span>
 
