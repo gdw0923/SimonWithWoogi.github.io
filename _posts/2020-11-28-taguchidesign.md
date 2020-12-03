@@ -77,6 +77,8 @@ math: true
 ### <span style="color:darkblue">1.6. Loss function about static characteristic</span>
 
 ![img](/assets/img/MATLAB_Quality/4_8.png)
+
+
 $$
 \begin{array}{l}
 \text{망목특성 손실함수} : L(y)=k(y-m)^2\\
@@ -88,6 +90,8 @@ L(m\pm\Delta)=k\Delta^2=W\\
 k=W /\Delta^2
 \end{array}
 $$
+
+
 이 수식에서 k는 큰 의미를 가지지는 않습니다만, 학습을 위해 설명하자면 `평균m`을 기준으로 `양측 델타` 에 들어가는 `손실비용 W` 를 얘기합니다. 여기서 `k` 는 `손실비용 W` 를 델타 제곱으로 나눈 값을 의미합니다. 델타 범위 모여있는 손실비용의 단위개념이죠.
 
 ## <span style="color:darkblue">2. Quality Engineering</span>
