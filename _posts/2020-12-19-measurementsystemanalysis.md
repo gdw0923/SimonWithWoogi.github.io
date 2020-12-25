@@ -239,7 +239,7 @@ $$
 
 ### <span style="color:darkblue">3.1. MATLAB Code</span>
 
-![결과](/assets/img/MATLAB_Quality/5_19.png)
+![결과](/assets/img/MATLAB_Quality/5_20.png)
 
 초기화를 먼저 해줍니다. 위 테이블처럼 10번씩 3명이 3번에 나눠서 측정할 것으로 스케줄을 짜겠습니다만, `Uniform` 분포를 따르는 랜덤이지만 한 측정에 10회를 넘길수도, 아닐수도 있습니다. 어쨌든 결론은 총 `측정데이터는 90개`를 얻네요.
 
@@ -277,6 +277,6 @@ gagerr(y,{part, operator},'randomoperator',true)
 
 결과를 보면 `NDC` 는 0개에, PRR이 `30%` 넘었으니 시스템에 문제가 있다고 나오네요. 실제 데이터는 아니지만, 위 소스를 통해 실제 데이터에서도 바로 반영이 가능하니 여기서 글을 마치겠습니다.
 
-![분석결과](/assets/img/MATLAB_Quality/5_18.png)
+![분석결과](/assets/img/MATLAB_Quality/5_19.png)
 
-![시각화](/assets/img/MATLAB_Quality/5_19.png)
+![시각화](/assets/img/MATLAB_Quality/5_20.png)
