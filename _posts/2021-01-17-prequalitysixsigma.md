@@ -1,7 +1,7 @@
 ---
 title: 6 Sigma, 식스 시그마 1편
 author: Simon Anderson
-date: 2020-01-17 19:35:00 +0800
+date: 2021-01-17 19:35:00 +0800
 categories: [MATLAB, Quality]
 tags: [MATLAB,Visualization, QualityManagement, Improvement, Statistics, Quality]
 image: /assets/img/MATLAB_Quality/6_Preview.png
