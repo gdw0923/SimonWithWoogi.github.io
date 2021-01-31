@@ -14,13 +14,11 @@ math: true
 
 ## <span style="color:darkblue">1. Kernel Trick</span>
 
-![메모리기반](/assets/img/MATLAB/10_1.png)
-
  `Kernel method` 는 `Memory` 기반 처리입니다. 학습이 끝나면 학습 데이터를 어느정도 저장하고 있다가 예측 단계에서 사용하죠. 사실 이 `Kernel method` 가 매우 강력하여 1990년대에 `Perceptron vs MachineLearning` 의 싸움에서 인공신경망인 `Perceptron` 을 깔끔하게 눌러버립니다. 결국 `Deep learning` 의 성능때문에 밀렸지만, 그 때 당시엔 인기였습니다. **지금은 `Deep learning` 과 함께 어우러져 쓰고 있습니다.**
 
 ### <span style="color:darkblue">1.1. Trick meaning</span>
 
-![함정카드](/assets/img/MATLAB/10_2.png)
+![함정카드](/assets/img/MATLAB/10_1.png)
 
  **아니, 이런 학술적인 용어에 트릭이요?**
 
@@ -30,7 +28,7 @@ math: true
 
  `ILSVRC(ImageNet Large Scale Visual Recognition Competition )` 에서 우승한 신경망 입력 사이즈를 확인해보면 보통 `224x224` 를 사용합니다. 사이즈를 따로 수정하지 않고 한 픽셀들이 곧 특징이고 차원으로 받아들일 수 있는데, 그렇다면 `50176` 차원이 나오게 됩니다. 
 
-![XOR2to3](/assets/img/MATLAB/10_3.png)
+![XOR2to3](/assets/img/MATLAB/10_2.png)
 
  XOR의 문제는 3차원으로 변환하면서 구분이 가능하듯, 고차원을 통하면 분류에 있어서 이점은 확실히 있습니다. 그런데 `50176` 차원은 충분히 고차원이고 여기서 더 고차원으로 바꾸는 일은 쉽지 않습니다. 여기서는 `Kernel function` 이 차원변환에 도움을 줍니다. 일단 `Kernel function` 의 형태는 아래와 같습니다. x, z 가 특징 벡터라면 두 독립변수의 내적한 값을 가져온다는 얘기이고 이 `Kernel function` 의 핵심 또한 **내적** 을 구한다에 있습니다.
 $$
@@ -61,7 +59,7 @@ $$
 
 ## <span style="color:darkblue">2. Support Vector Machine(SVM) </span>
 
-![근육맛쿠키](/assets/img/MATLAB/10_4.png)
+![근육맛쿠키](/assets/img/MATLAB/10_3.png)
 
 `Kernel trick` 이 붙은 `SVM` 은 더이상 무서울 것이 없습니다. 이건 뭐 그냥 깡패에요. `Kernel trick` 한번 적용됐다고 얘를 데리고 다니면서 처음엔 그저 `분류(classification)` 로만 쓰다가 `회귀(Regression)` 까지 지도 학습 모든 분야에 자리르 잡습니다.
 
@@ -73,7 +71,7 @@ $$
 
  위 산점도를 기준으로 1번은 실패한 분류기, 2번과 3번은 잘 분류된 분류기라 볼 수 있습니다. **하지만 여기서 어떤 것이 새로운 데이터가 들어왔을 때 3번이 더 잘 분류할 것으로 보입니다.** 왜냐하면 2번은 한쪽 집단에 너무 붙어있어서 불안하죠? 물론 데이터를 다 까보면 실제로 2번에 피팅됐을 수도 있습니다. 그러나 SVM의 핵심은 현재 가지고 있는 데이터에서 각 집단간 여백을 최대하 함에 있습니다.
 
-![이거맞을수도김성회그게아니죠](/assets/img/MATLAB/10_5.png)
+![그게아니죠](/assets/img/MATLAB/10_5.png)
 
 ### <span style="color:darkblue">2.2. Linear Support Vector Machine </span>
 
@@ -188,3 +186,196 @@ f(x)=\sum_{a_i\neq0,\hat{a_i}\neq0}(a_i-\hat{a_i})K(x,x_i)+b
 $$
   여기서 주요점은 `summation` 은 아래조건입니다. `결정경계` 에서 잘 분류된 샘플은 들어올 필요없는 것다는 점이며, 즉 이 수식에는 `Support vector` 만 들어간다는 점이죠. 이제 `MATLAB` 실습을 진행하겠습니다.
 
+## <span style="color:darkblue">3. MATLAB </span>
+
+ `MATLAB` 에서 모든 `Machine learning` 함수명은 `fit` 이 붙습니다. 그리고 `분류(classification)` 은 `c` 가, `회귀(regression)` 은 `r` 이 붙습니다. 마지막으로 `method` 명이 끝에 붙어서 `머신러닝 / 분류 / 디시젼트리` 라고 한다면, 함수명은 `fitctree` 가 됩니다. 또 `머신러닝 / 분류 / knn` 는 `fitcknn` 이구요. `머신러닝 / 회귀 / 디시젼트리` 는 `fitrtree` 입니다.
+
+ **그런데 SVM은 예외가 있습니다. OneClass SVM과 MultiClass SVM을 따로 분류합니다.** 그래서 OCSVM은 `fitcsvm` 으로, MCSVM은 `fitcecoc` 로 사용합니다. 더 나아가 고차원 데이터 세트에서 `이진분류`는 `fitclinear` 를 얘기하고 있습니다. 회귀는 `fitrsvm` 으로 묶입니다. 그러나 마찬가지로 고차원은 `fitrlinear` 를 사용합니다. 그리고 아래는 `이진 다중 저차원 분류에서 고차원 분류로` 설명을 드리겠습니다.
+
+### <span style="color:darkblue">3.1. One class SVM </span>
+
+ 첫번째로, `단일 클래스(One Class)` 혹은 `이진 분류(Binomial classification)` 에 적합한 함수인 `fitcsvm` 에 대한 예제입니다. 또한 높은 차원에 대해서는 이 함수가 적합하지 않습니다. `이진 분류` 라고 해도 차원이 많다면, 다른 함수를 써야합니다.
+
+[분류]
+
+```matlab
+load fisheriris
+inds = ~strcmp(species,'setosa');
+X = meas(inds,3:4);
+y = species(inds);
+
+SVMModel = fitcsvm(X,y)
+
+classOrder = SVMModel.ClassNames
+
+sv = SVMModel.SupportVectors;
+figure
+gscatter(X(:,1),X(:,2),y)
+hold on
+plot(sv(:,1),sv(:,2),'ko','MarkerSize',10)
+legend('versicolor','virginica','Support Vector')
+hold off
+```
+
+아무래도 `단일 클래스 분류` 라서, 분류할 두가지(`Versicolor`, `Verginica`)만 가져옵니다.
+
+![plot](/assets/img/MATLAB/10_11.png)
+
+[이상치, SupportVector 확인하기]
+
+ **2차 제작에 대한 출처 :** [mathworks help](https://kr.mathworks.com/help/stats/fitcsvm.html) , [fisheriris](https://kr.mathworks.com/help/stats/examples/classification.html#d122e1480)
+
+```matlab
+load fisheriris
+X = meas(:,1:2);
+y = ones(size(X,1),1);
+```
+
+`fisher의 iris` 데이터를 가져옵니다.` 피셔의 붓꽃 데이터의 meas`는 150개 붓꽃 표본의 꽃받침 길이, 꽃받침 너비, 꽃잎 길이, 꽃잎 너비에 대한 측정값으로 구성되어 있습니다. 그러므로 `X` 에는 150개의 붓꽃 표본의 꽃받침 길이, 꽃받침 너비만 들어가 있습니다. 그리고 `Y` 는 150x1 짜리로 사이즈에 1로 구성된 열벡터가 들어가있습니다.
+
+```matlab
+rng(1);
+SVMModel = fitcsvm(X,y,'KernelScale','auto','Standardize',true,...
+    'OutlierFraction',0.05);0
+```
+
+수정된 데이터 세트를 사용하여 SVM 분류기를 훈련시킵니다. 관측값의 5%가 이상값이라고 가정합니다. 예측 변수를 표준화합니다.
+
+```matlab
+svInd = SVMModel.IsSupportVector;
+h = 0.02; % Mesh grid step size
+[X1,X2] = meshgrid(min(X(:,1)):h:max(X(:,1)),...
+    min(X(:,2)):h:max(X(:,2)));
+[~,score] = predict(SVMModel,[X1(:),X2(:)]);
+scoreGrid = reshape(score,size(X1,1),size(X2,2));
+```
+
+훈련된 `SVMModel` 에서 시각화 준비를 합니다. 또한 `predict` 에서 분류된 레이블만이 아니라 유사도를 볼 수 있는 `score` 를 가져옵니다.
+
+```matlab
+figure
+plot(X(:,1),X(:,2),'k.')
+hold on
+plot(X(svInd,1),X(svInd,2),'ro','MarkerSize',10)
+contour(X1,X2,scoreGrid)
+colorbar;
+title('{\bf Iris Outlier Detection via One-Class SVM}')
+xlabel('Sepal Length (cm)')
+ylabel('Sepal Width (cm)')
+legend('Observation','Support Vector')
+hold off
+```
+
+![plot](/assets/img/MATLAB/10_12.png)
+
+이상값을 나머지 데이터와 분리하는 경계는 등고선 값이 `0`인 위치에서 나타납니다.
+
+교차 검증된 데이터에서 음의 점수를 갖는 관측값의 비율이 5%에 가까운지 확인합니다.
+
+```matlab
+CVSVMModel = crossval(SVMModel);
+[~,scorePred] = kfoldPredict(CVSVMModel);
+outlierRate = mean(scorePred<0)
+```
+
+실제로 설정한 5%와 가까운지 `outlierRate` 가 알려줍니다.
+
+### <span style="color:darkblue">3.2. Multi class SVM </span>
+
+ 두번째는 `Multi class SVM`, `다중 분류, c-분류 SVM` 에 대한 예제입니다. `fitcecoc` 를 사용하고, 저~중 차원의 데이터에 적합합니다.
+
+```matlab
+load fisheriris
+X = meas;
+Y = species;
+rng(1); % For reproducibility
+```
+
+이번에는 피셔데이터를 몽땅씁니다. `다중분류` 라서 두 개만 고를 이유가 없거든요.
+
+```matlab
+t = templateSVM('Standardize',true)
+Mdl = fitcecoc(X,Y,'Learners',t,...
+    'ClassNames',{'setosa','versicolor','virginica'});
+```
+
+`templateSVM` 를 이용하여 `모델 옵션` 을 만들어줍니디. 그리고 `fitcecoc` 를 통해 `model` 을 만듭니다.
+
+```matlab
+CVMdl = crossval(Mdl);
+genError = kfoldLoss(CVMdl)
+```
+
+`crossval` 은 교차검증이고 `kfoldLoss` 는 `k-fold` 검증입니다.둘 다 일반화된 분류 오차를 볼 수 있습니다. 
+
+### <span style="color:darkblue">3.3. SVM for High dimension </span>
+
+ 마지막으로 `CNN` 과 결합하여 사용할때 주로 고차원이 만들어지는데, 이 외에도 많은 변수들을 사용하여 예측할 때 쓰는 `fitclinear / fitrlinear` 입니다. 이 챕터는 번역된 자료가 없어서 제가 번역을 하여 2차 창작을 했습니다.
+
+[Mathworks help](https://kr.mathworks.com/help/stats/fitclinear.html)
+
+#### <span style="color:darkblue">3.3.1. description </span>
+
+ `fitclinear` 는 선형 분류 모델로 `고차원 이진분류`, `많은 예측 데이터` , 정규화된 `SVM` 에서의 선형분리가 가능한 모델, `로지스틱 회귀` 모델에 사용합니다. `fitclinear` 는 `스토캐스틱 경사하강법` 같은 기술로서 적은 연산시간으로 목적함수 최소화를 진행합니다. 뭐 어쨌든 많은 변수가 있으면 고차원이고, 그 고차원에서는 아무래도 연산량이 늘어나다보니 `fitclinear` 는 고차원에서 생기는 느려지는 연산에 초점을 맞춘 함수입니다. 
+
+#### <span style="color:darkblue">3.3.2. Train Linear Classification Model </span>
+
+```matlab
+load nlpdata
+Ystats = Y == 'stats';
+Lambda = logspace(-6,-0.5,11);
+```
+
+`NLP dataset` 을 이용하구요 . X는 예측변수들에 대한 희소행렬입니다. Y는 종속변수이면서 레이블입니다. 그리고 `Lambda` 의 `logspace` 는 11개의 10^-6 에서 10^-0.5 사이의 로그간격 값을 만듭니다.
+
+```matlab
+X = X'; 
+rng(10); % For reproducibility
+CVMdl = fitclinear(X,Ystats,'ObservationsIn','columns','KFold',5,...
+    'Learner','svm','Solver','dual','Regularization','ridge',...
+    'Lambda',Lambda)
+```
+
+`CVMdl` 이라는 모델을 만들었구요. `Learner` 는 `svm` , `Solver` 는 `dual`, `Regulation` 은 `ridge` 로 설정합니다.
+
+```
+numCLModels = numel(CVMdl.Trained)
+```
+
+5겹 교차검증(`KFold`, 5) 로 설정해서 훈련된 `CVMdl` 부분 모델이 5개가 나왔나 확인해봅니다.
+
+```matlab
+Mdl1 = CVMdl.Trained{1}
+```
+
+그 중 하나만 잡아와 특징을 확인하구요.
+
+```matlab
+ce = kfoldLoss(CVMdl);
+```
+
+`cross validation error` 를 확인합니다.
+
+```matlab
+Mdl = fitclinear(X,Ystats,'ObservationsIn','columns',...
+    'Learner','svm','Solver','dual','Regularization','ridge',...
+    'Lambda',Lambda);
+numNZCoeff = sum(Mdl.Beta~=0);
+```
+
+아까 봤던 것은 `K-fold` 옵션을 넣은 것이구요. 이번에는 빼보겠습니다.
+
+```matlab
+figure;
+[h,hL1,hL2] = plotyy(log10(Lambda),log10(ce),...
+    log10(Lambda),log10(numNZCoeff)); 
+hL1.Marker = 'o';
+hL2.Marker = 'o';
+ylabel(h(1),'log_{10} classification error')
+ylabel(h(2),'log_{10} nonzero-coefficient frequency')
+xlabel('log_{10} Lambda')
+title('Test-Sample Statistics')
+hold off
+```
+
+![plot](/assets/img/MATLAB/10_13.png)
