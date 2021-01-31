@@ -31,14 +31,22 @@ math: true
 ![XOR2to3](/assets/img/MATLAB/10_2.png)
 
  XOR의 문제는 3차원으로 변환하면서 구분이 가능하듯, 고차원을 통하면 분류에 있어서 이점은 확실히 있습니다. 그런데 `50176` 차원은 충분히 고차원이고 여기서 더 고차원으로 바꾸는 일은 쉽지 않습니다. 여기서는 `Kernel function` 이 차원변환에 도움을 줍니다. 일단 `Kernel function` 의 형태는 아래와 같습니다. x, z 가 특징 벡터라면 두 독립변수의 내적한 값을 가져온다는 얘기이고 이 `Kernel function` 의 핵심 또한 **내적** 을 구한다에 있습니다.
+
+
 $$
 K(x, z) = \phi(x) \cdot \phi(z)
 $$
 
 
+
+
+
+
 ---
 
 **유명한 세 가지 `Kernel function`**
+
+
 $$
 \begin{array}{l}
 \text{Polynomial Kernel : } K(x,z)\ =\ (x\cdot z +1)^p \\
@@ -47,6 +55,10 @@ $$
 
 \end{array}
 $$
+
+
+
+
 
 
 ---
@@ -76,11 +88,15 @@ $$
 ### <span style="color:darkblue">2.2. Linear Support Vector Machine </span>
 
  특정 선을 기준으로 집단을 나눌때, 그 선을 `결정경계(Decision boundary)` 라고 부르겠습니다. 먼저 집단이 2개라고 가정할때 `결정경계` 의 식은 아래와 같습니다.
+
+
 $$
 d(x) = w^Tx+b=0 \\
 w = \text{weight} \\
 d(x) = \text{points in dimension}
 $$
+
+
  `경사하강법(Gradient Decent)` 에서, `Neural Network`, `Fully connected network` 에서 주로 보는 식입니다. `d(x) = 0` 으로 인하여, 양수면 A 집단, 음수면 B 집단으로 구분할 수 있습니다. 그리고 w는 기울기의 각도라면 b는 기울기의 위치를 결정합니다. 이제 b가 각 집단 여백의 딱 가운데에 있도록 조정합니다. **그리고 그 여백의 딱 가운데에 있도록 도와주는 벡터를 Support Vector라고 합니다.**
 
 ![SV](/assets/img/MATLAB/10_6.png)
@@ -88,19 +104,27 @@ $$
 ### <span style="color:darkblue">2.3. Margin </span>
 
  이제는 `Margin(여백)` 이 가장 큰 기울기를 어떻게 계산하는 지 말씀드리겠습니다. w로 기울기 방향이 잘 잡혀있어야 기본적으로 좋은 모델일테니까요. 먼저 거리 계산식은 `L2 Norm` 을 이용합니다.
+
+
 $$
 \begin{array}{l}
 L_2 & = \sqrt {\sum_i^n x_i^2} \\ 
 & =  \sqrt {x_1^2 + x_2^2 + x_3^2 + …. + x_n^2}
 \end{array}
 $$
+
+
  x 를 `Support Vector` 라고 했을때, 여백은 아래의 수식으로 표현할 수 있습니다. 그리고 `d(x)가 음수면 A집단 / 양수면 B집단` 이라 했을 때 `d(x)` 를 1로 두었을 때 계산하기 쉬워 최종적으로 나오는 식에 참고해주세요.
+
+
 $$
 \begin{array}{l}
 \text{Margin} &= 2\cdot\frac{|d(x)|}{||w||_2}\\
 &= \frac{2}{||w||_2}
 \end{array}
 $$
+
+
  이제 이 `Margin` 을 최대화할때, 여기저기 `Support Vector` 들을 바꿔가면서 어디가 제일 큰 여백일까 찾아보게 됩니다. 이를 `조건부 최적화(Conditional optimization)` 이라고 부르며 `라그랑주 승수(Lagurange multiplier)` 를 이용하여 해결합니다. 마지막으로 `Wolfe dual` 을 이용하여 내적이 나타나도록 수식을 바꿉니다. 수식 설명은 그리 어렵지 않지만 내용만 차지하기에 생략하겠습니다. 의미하는 바는 `w, b` 를 제거하고 `라그랑주 승수 a` 만 남아 간단한 연산이 됩니다.
 
 ### <span style="color:darkblue">2.4. Soft Margin </span>
@@ -122,6 +146,8 @@ $$
 ---
 
 위 네가지 경우를 하나의 수식으로 정리할 수 있습니다. `슬랙변수(Slack variable)` 를 추가하여 정리 가능합니다.
+
+
 $$
 \begin{array}{l}
 \text{Slack variable} = \xi \\
@@ -131,12 +157,18 @@ $$
 3.\ 1<\xi,\text{오분류된 모든 데이터}
 \end{array}
 $$
+
+
  이제 여백을 크게하면서 `슬랙변수` 가 0에 피팅하는 w를 찾으면 되겠습니다.
+
+
 $$
 J(w,\xi)=\frac{1}{2}||w||^2_2+C\sum_{i=1}^{n}\xi_i \\
 \text{첫째항은 여백을 크게, 둘째항은 슬랙변수가 0이 되게}\\
 C=\text{hyper parameter}
 $$
+
+
 `Hyper parameter` 에 따라 데이터 정확도 혹은 오분류율에 얼마나 민감하게 반응할 지 조정할 수 있습니다.
 
 이후로는 `라그랑주 승수` 로 변환하고, `Wolfe 쌍대 문제` 로 다시 작성합니다. 결론은 `2.3. Margin` 의 내용에서 C의 역할이 생겼다는 것으로 이해하시면 됩니다.
@@ -144,18 +176,30 @@ $$
 ### <span style="color:darkblue">2.5. Non linear SVM </span>
 
 `비선형 SVM` 은 위에서 `Margin` 과 `선형 SVM` 을 설명했으니 그리 어렵지 않습니다. 여기서 `Kernel Trick` 을 이용하는데요. 다시한번 `Kernel function` 형태를 보겠습니다.
+
+
 $$
 K(x, z) = \phi(x) \cdot \phi(z)
 $$
- 그리고 이번에는 `2.3. Margin` 에서 내적이 나타나도록 수식을 바꾼 `Wolfe dual` 의 식을 한번 꺼내보겠습니다.
+ 
+
+그리고 이번에는 `2.3. Margin` 에서 내적이 나타나도록 수식을 바꾼 `Wolfe dual` 의 식을 한번 꺼내보겠습니다.
+
+
 $$
 \mathcal{L} = \sum_{i=1}^{n}\alpha_i-\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i \alpha_j y_i y_j x_i \cdot x_j\\
 $$
+
+
  이 수식은 L공간에서의 수식이고 이제 `Kernel trick` 형태에 맞게 H공간으로서 바꿔 작성하겠습니다.
+
+
 $$
 \mathcal{L} = \sum_{i=1}^{n}\alpha_i-\frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i \alpha_j y_i y_j \phi(x_i) \cdot \phi(x_j)\\
 $$
- 빌드업이 너무 잘되어 있어서 `비선형 SVM` 은 쉽게 넘어갈 수 있겠습니다.
+ 
+
+빌드업이 너무 잘되어 있어서 `비선형 SVM` 은 쉽게 넘어갈 수 있겠습니다.
 
 ### <span style="color:darkblue">2.6. c-classification SVM </span>
 
@@ -181,10 +225,14 @@ $$
 ![둔감오류함수](/assets/img/MATLAB/10_10.png)
 
  저희는 이제 `슬랙변수` 도 `Kernel trick` 도 아니까 `라그랑주 승수` 를 넘어서 바로 예측 수식에 들어가겠습니다.
+
+
 $$
 f(x)=\sum_{a_i\neq0,\hat{a_i}\neq0}(a_i-\hat{a_i})K(x,x_i)+b
 $$
-  여기서 주요점은 `summation` 은 아래조건입니다. `결정경계` 에서 잘 분류된 샘플은 들어올 필요없는 것다는 점이며, 즉 이 수식에는 `Support vector` 만 들어간다는 점이죠. 이제 `MATLAB` 실습을 진행하겠습니다.
+  
+
+여기서 주요점은 `summation` 은 아래조건입니다. `결정경계` 에서 잘 분류된 샘플은 들어올 필요없는 것다는 점이며, 즉 이 수식에는 `Support vector` 만 들어간다는 점이죠. 이제 `MATLAB` 실습을 진행하겠습니다.
 
 ## <span style="color:darkblue">3. MATLAB </span>
 
