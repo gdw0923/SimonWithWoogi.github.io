@@ -4,7 +4,7 @@ author: Woogi
 date: 2021-01-29 15:10:00 +0800
 categories: [Programming, JAVA]
 tags: [java]
-image: /assets/img/kakao/vision_4.png
+image: /assets/img/java/java_logo.png
 
 ---
 
