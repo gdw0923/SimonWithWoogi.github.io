@@ -2,7 +2,7 @@
 title: JAVA를 시작해보자
 author: Woogi
 date: 2021-01-29 15:10:00 +0800
-categories: [Programming, JAVA]
+categories: [Language, JAVA]
 tags: [java]
 image: /assets/img/java/java_logo.png
 

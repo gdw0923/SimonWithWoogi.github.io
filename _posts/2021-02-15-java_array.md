@@ -2,7 +2,7 @@
 title: JAVA_배열
 author: Woogi
 date: 2021-02-15 22:40:00 +0800
-categories: [Programming, JAVA]
+categories: [Language, JAVA]
 tags: [java]
 image: /assets/img/java/java_logo.png
 

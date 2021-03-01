@@ -2,7 +2,7 @@
 title: JAVA_연산자
 author: Woogi
 date: 2021-02-13 22:10:00 +0800
-categories: [Programming, JAVA]
+categories: [Language, JAVA]
 tags: [java]
 image: /assets/img/java/java_logo.png
 

@@ -2,7 +2,7 @@
 title: JAVA_조건문
 author: Woogi
 date: 2021-02-17 16:40:00 +0800
-categories: [Programming, JAVA]
+categories: [Language, JAVA]
 tags: [java]
 image: /assets/img/java/java_logo.png
 
