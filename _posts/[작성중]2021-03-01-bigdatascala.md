@@ -8,25 +8,49 @@ image: /assets/img/Scala/1_Preview.png
 math: true
 ---
 
-## <span style="color:darkblue">1. Introduce</span>
 
-**이번 포스팅은 재미로 구축했으니, 너무 많은 돈을 쓰지마세요. 로또는 도박입니다.**
 
- 저는 돈에 큰 관심이 없습니다. 어렸을 때 가정형편이 매우 어려웠으나, 모든 가족이 다같이 노력했고 상황이 많이 나아졌습니다. 이 과정속에 돈보다는 인류애적 가치를 더 중요하게 생각하는 사람이 됐습니다. 그래도 로또 5000원은 일주일을 두근거리게 하죠.
+ 저는 RAM이 350 bytes 정도되는 `MCU` 에서 처음으로 소프트웨어를 짰었는데, 그때 당시 할당되는 프로그램 메모리가 아마 8 kb 정도였던 걸로 기억합니다. 그때는 C와 기계어를 돌아가며 보는 수준에서 프로그램을 만들어갔는데요. 그 뒤로 CPU 기반의 객체지향 프로그램을 하고 C++을 접하면서 넘쳐나는 메모리에 행복을 느꼈습니다. 그래도 메모리 관리는 늘 중요한 문제였죠. 그러다 C#이랑 Java를 하며 Garbage collection을 만났는데 이건 뭐 생산성이 이렇게 올라갈 줄이야 너무 놀랐습니다. 더 나아가 라이브러리 활용이 편리한 Python, 벡터 혹은 행렬에 특화된 MATLAB, 분산컴퓨팅에 적절한 Scala까지, 이제는 개발하고 릴리즈하고 관리하기까지 참 편하고 좋은 세상이라 행복합니다.
 
-![집게사장과로또](/assets/img/MATLAB/11_1.png)
 
-### <span style="color:darkblue">1.1. Lotto in Korea</span>
 
-![로또 마크](/assets/img/MATLAB/11_2.png)
+## <span style="color:darkblue">1. Scala</span>
 
- 로또는 `1-45` 사이에서 `중복없이 6개` 의 숫자를 선택합니다. 끝으로 보너스 숫자인 하나를 더 추출합니다. 그렇게 보너스 숫자 포함한 총 `7` 개의 숫자맞추기 놀이 입니다. `1000원` 당 하나의 티켓을 살 수 있구요. `5000원` 으로 한 세트를 살 수 있습니다. 여담으로 저는 로또에 대해서 잘 모릅니다. 이번에 이 코드를 구현하면서 로또룰을 알게 됐고 **앞으로 진행하는 내용은 데이터를 기반으로한 로또 당첨번호 에측입니다.**
+**Scalar 아니야? 아 그런가?**
 
-### <span style="color:darkblue">1.2. Winning lottery numbers</span>
+ `Scalable language` , 줄여서 `Scala` 의 얘기입니다. `Scala` 의 창시자인 `마틴 오더스키` 교수님께서 직접 집필하신 `Programming in Scala 3/e` 를 참고했습니다. 과연 이름만큼 정말로 유연한 언어일까요? 같이 알아보시죠.
 
-![당첨번호들](/assets/img/MATLAB/11_3.png)
+![다현두부짤](/assets/img/Scala/1_1.png)
 
- 저는 두 가지를 적용할 예정입니다. 첫 번째는 `번호별 통계` 를 가져와, 가장 많이 나온 번호 15개중에서 3개, 가장 적게 나온 번호 15개중에서 2개, 중간 번호 15개중에서 1개씩 추출하여 총 6개의 번호를 만들 것이고 두 번째는 `LSTM` 을 이용하여 총 45개의 번호들이 추출되는 주기를 뽑아 회차마다 번호를 구할 수 있습니다. 끝으로 이 두가지 구조를 조합해서, `LSTM` 으로 구한 번호들중에서 발생빈도에 따라 가중치를 적용하겠습니다.
+### <span style="color:darkblue">1.1. JVM(Java Virtual Machine)</span>
+
+![JVM](/assets/img/Scala/1_2.png)
+
+ `가상머신(Virtual Machine)` , 지금 크고 작은 기업에서, 그리고 일상에서 `가상머신` 을 쓰는 것이 보편화되어 있습니다. 현업에 계신 `Software engineer` 만이 아니라 공과대학 대학생분들이 과제할때도 `AWS` 서 프리티어 노드 5개를 가져와다가 묶어서 쓰고 있습니다. 근데 프리티어 노드는 꼭 `Linux` 밖에 없단 말이죠. `Windows` 를 써오는 사람에게는 적응하기란 그리 쉬운 일이 아닙니다.
+
+ `OS` 에 제약없이 사용하고싶은 사람들이 늘어나면서 `JAVA 프로그램` 을 `OS` 위의 `가상머신` 에서 돌릴 수 있도록 구현하게 됩니다. `가상머신` 이라는게 단어가 어려운 것이지 중개자로 생각하셔도 문제 없습니다. `OS` 가 무엇이든 저희가 네이버에 접속하고 구글에 들어가서 웹서핑을 하는데, 이걸 `인터넷 익스플로러, 사파리, 크롬` 이런 웹 브라우저가 있기 때문에 가능한 일이죠. `JVM` 도 마찬가지입니다. 또한  **Scala** 를 이해하려면 `JVM` 메모리 구조를 아는게 좋습니다.
+
+![JVM 메모리구조](/assets/img/Scala/1_3.png)
+
+ `JVM` 메모리 구조는 위와 같습니다. `JVM` 이 `Class loader` 를 통해  `Java byte code` 를 불러오는 것부터 시작됩니다. 불러오면 `Execution Engine` 에 의해서 돌아가기 시작하는데 여기서 실제로 돌아가진 않습니다. `Runtime Data Area` 에 담아지면 그제서야 진짜 작업이 수행됩니다. 메모리 구조에 대해 설명드리는 이유는`JVM` 이`OS` 에 제한없는 것 외에도  `Garbage Collection` 덕에 메모리를 효율적으로 사용할 수 있게 해줍니다.
+
+ `Scala` 에 대한 내용이 본 주제기에 `JVM` 에 대한 내용은 다음에 본격적으로 작성하겠습니다. 
+
+### <span style="color:darkblue">1.2. Scala information</span>
+
+[Scala3 git](https://github.com/lampepfl/dotty)
+
+ 위 링크는 `Scala3` 에 대한 깃주소입니다. 또한 밑에는 블로그 주소이니 여러 최신 정보를 얻을 수 있습니다.
+
+[Scala3 Blog](https://dotty.epfl.ch/blog/index.html)
+
+ 또한 `Scala` 를 꼭 설치하지 않으셔도 됩니다. 웹에서도 `Scala` 를 체험하실 수 있거든요. 학습용으로는 아주 충분합니다. 아래 링크입니다.
+
+[Scastie](https://scastie.scala-lang.org/?target=dotty)
+
+![Scastie](/assets/img/Scala/1_3.png)
+
+이런 창이 보이시나요?
 
 ## <span style="color:darkblue">2. Binomial time series LSTM</span>
 
