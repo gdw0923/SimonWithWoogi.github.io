@@ -24,6 +24,8 @@ math: true
 
 ![flow](/assets/img/Project/2_2.png)
 
+해당자료는 "온라인 리뷰 빅데이터를 활용한 외래관광객의 국내호텔 이용 만족도에 관한 연구 -감성분석을 중심으로-" 라는 논문에서 가져온 플로우 입니다. `트립 어드바이저` 에 `오피니언 마이닝` 사례인데요. 너무 좋은 글에 잘 만들어진 그림이라 가져왔습니다. 
+
 `Opinion mining` 은 `Text mining` 에서 아주 조금 진화했다고 볼 수 있습니다. 그러니 `텍스트 마이닝` 의 가장 저명한 절차인 **문서수집 -> 형태소 분석 ->워드카운트** 를 먼저 진행하고 `오피니언 마이닝` 의 영역인 **화행분석 + 대화처리(감성분석)**를 진행하겠습니다
 
 ### <span style="color:darkblue">1.2. Python and utilities</span>
@@ -78,29 +80,8 @@ math: true
 
 어지간한 사항을 다 입력하면 확인용 메일을 날립니다. `Cofirm email` 을 클릭하면 새로 프로젝트를 만들어 봅시다.
 
-![dsec](/assets/img/Project/2_7.png)
+![name](/assets/img/Project/2_7.png)
 
-**이제 consumer, acceess `key` 와 `tocken` 을 잘 챙겨두세요!**
+**이제 consumer, acceess `key` 와 `tocken` 을 잘 챙겨두세요!** 사실 언제나 다시 만들 수 있으니 그냥 다시만드셔도 됩니다!
 
-## <span style="color:darkblue">2. Text mining</span>
-
-```python
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-```
-
-`Pycharm` 에서 만들어진 새로운 프로젝트의 `main.py` 에 있는 첫 코드는 위와 같은 코드가 적혀있습니다.
+![keys](/assets/img/Project/2_8.png)
