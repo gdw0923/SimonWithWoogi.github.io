@@ -1,5 +1,5 @@
 ---
-ㅈtitle: Textmining, 현대자동차 여론을 조사해보자(1)
+title: Textmining, 현대자동차 여론을 조사해보자(1)
 author: Simon Anderson
 date: 2021-03-04 10:32:00 +0800
 categories: [Project, Data Science]
