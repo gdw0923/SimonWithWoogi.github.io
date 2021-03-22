@@ -20,7 +20,7 @@ C++ 에서는 문자열에 관한 처리가 엄격한 편이라 같은 문자열
 
 <span style="color:darkblue">`1.1. Code`</span>
 
-```java
+```c++
 std::wstring s2ws(const std::string& s)
 {
 	int len;
