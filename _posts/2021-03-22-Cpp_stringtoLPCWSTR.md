@@ -2,9 +2,9 @@
 title: C++_string To LPCWSTR
 author: Woogi
 date: 2021-03-22 16:40:00 +0800
-categories: [Language, C++]
-tags: [C++]
-image: /assets/img/C++/C++_logo.png
+categories: [Language, Cpp]
+tags: [Cpp]
+image: /assets/img/Cpp/Cpp_logo.png
 
 ---
 
