@@ -77,7 +77,7 @@ theme_mode: light # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/Blog_logo_210213.png.jpg   # support internet resources
+avatar: /assets/img/Blog_logo_210213.png   # support internet resources
 
 # boolean type, the global switch for ToC in posts.
 toc: true
