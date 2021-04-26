@@ -1,12 +1,12 @@
 # The Site Configuration
 
 # Import the theme
-theme: jekyll-theme-chirpy
+# theme: jekyll-theme-chirpy
 
 # Only if your site type is GitHub Project sites and doesn't have a custom domain,
 # change below value to '/projectname'.
-baseurl: '/SimonWithWoogi.github.io'
-
+#baseurl: '/SimonWithWoogi.github.io'
+baseurl: ''
 # the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
 lang: ko-KR
 
@@ -44,7 +44,7 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+google_site_verification: Simon Anderson verification # change to your verification string
 # --------------------------
 
 google_analytics:
@@ -75,7 +75,7 @@ theme_mode: light # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/commons/avatar.jpg
+avatar: /assets/img/Blog_logo_210213.png.jpg   # support internet resources
 
 # boolean type, the global switch for ToC in posts.
 toc: true
