@@ -3,7 +3,7 @@ title: MATLAB 탐색 알고리즘을 이해하여 식인종 문제를 응용해�
 author: Simon Anderson
 date: 2020-09-25 14:10:00 +0800
 categories: [MATLAB, Applied]
-tags: [MATLAB,Java, DeepLearning, Algorithm, DataStructure]
+tags: [MATLAB, java, DeepLearning, Algorithm, DataStructure]
 image: /assets/img/MATLAB/2_Preview.png
 math: true
 ---
