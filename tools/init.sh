@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 #
 # Init the evrionment for new user.
@@ -6,6 +7,11 @@
 # https://github.com/cotes2020/jekyll-theme-chirpy
 # © 2020 Cotes Chung
 # Published under MIT License
+=======
+#!/usr/bin/env bash
+#
+# Init the evrionment for new user.
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 set -eu
 

@@ -1,8 +1,11 @@
 #  The contact options.
+<<<<<<< HEAD
 #  v2.3
 #  https://github.com/cotes2020/jekyll-theme-chirpy
 #  © 2020 Cotes Chung
 #  MIT Licensed
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 -
   type: github
@@ -21,11 +24,23 @@
 
 # Uncomment and complete the url below to enable more contact options
 # -
+<<<<<<< HEAD
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your mastodon account page
 # -
 #   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Linkedin homepage
 # -
+=======
+#   type: mastodon
+#   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
+#   url:  ''                  # Fill with your mastodon account page
+# -
+#   type: linkedin
+#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+#   url:  ''                  # Fill with your Linkedin homepage
+# -
+#   type: stack-overflow
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 #   icon: 'fab fa-stack-overflow'
 #   url:  ''                  # Fill with your stackoverflow homepage

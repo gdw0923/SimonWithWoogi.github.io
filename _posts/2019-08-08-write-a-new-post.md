@@ -8,7 +8,11 @@ tags: [writing]
 
 ## Naming and Path
 
+<<<<<<< HEAD
 Create a new file named `YYYY-MM-DD-TITLE.EXTENSION` and put it in the `_post/` of the root directory. Please note that the `EXTENSION` must be one of `md` and `markdown`. From `v2.4.1`, you can create sub-directories under `_posts/` to categorize posts.
+=======
+Create a new file named `YYYY-MM-DD-TITLE.EXTENSION` and put it in the `_posts/` of the root directory. Please note that the `EXTENSION` must be one of `md` and `markdown`.
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ## Front Matter
 
@@ -31,6 +35,7 @@ In order to accurately record the release date of a post, you should not only se
 
 ### Categories and Tags
 
+<<<<<<< HEAD
 The `categories` of each post is designed to contain up to two elements, and the number of elements in `tags` can be zero to infinity.
 
 The list of posts belonging to the same *category*/*tag* is recorded on a separate page. At the same time, the number of these *category*/*tag* type pages is equal to the number of `categories` / `tags` elements for all posts, which means that the two number must be exactly the same.
@@ -134,6 +139,135 @@ image: /path/to/image-file
 ---
 ```
 
+=======
+The `categories` of each post is designed to contain up to two elements, and the number of elements in `tags` can be zero to infinity. For instance:
+
+```yaml
+categories: [Animal, Insect]
+tags: [bee]
+```
+
+## Table of Contents
+
+By default, the **T**able **o**f **C**ontents (TOC) is displayed on the right panel of the post. If you want to turn it off globally, go to `_config.yml` and set the value of variable `toc` to `false`. If you want to turn off TOC for specific post, add the following to post's [Front Matter](https://jekyllrb.com/docs/front-matter/):
+
+```yaml
+---
+toc: false
+---
+```
+
+## Comments
+
+Similar to TOC, the [Disqus](https://disqus.com/) comments is loaded by default in each post, and the global switch is defined by variable `comments` in file `_config.yml` . If you want to close the comment for specific post, add the following to the **Front Matter** of the post:
+
+```yaml
+---
+comments: false
+---
+```
+
+## Mathematics
+
+For website performance reasons, the mathematical feature won't be loaded by default. But it can be enabled by:
+
+```yaml
+---
+math: true
+---
+```
+
+## Mermaid
+
+[**Mermaid**](https://github.com/mermaid-js/mermaid) is a great diagrams generation tool. To enable it on your post, add the following to the YAML block:
+
+```yml
+---
+mermaid: true
+---
+```
+
+Then you can use it like other markdown language: surround the graph code with ```` ```mermaid ```` and ```` ``` ````.
+
+## Images
+
+### Preview image
+
+If you want to add an image to the top of the post contents, specify the url and alt attribute for the image:
+
+```yaml
+---
+image:
+  src: /path/to/image/file
+  alt: image alternative text
+---
+```
+
+### Image caption
+
+Add italics to the next line of an image，then it will become the caption and appear at the bottom of the image:
+
+```markdown
+![img-description](/path/to/image)
+_Image Caption_
+```
+
+### Image size
+
+You can specify the width (and height) of a image with `width`:
+
+```markdown
+![Desktop View](/assets/img/sample/mockup.png){: width="400"}
+```
+
+### Image position
+
+By default, the image is centered, but you can specify the position by using one of class `normal` , `left` and `right`. For example:
+
+- **Normal position**
+
+  Image will be left aligned in below sample:
+
+  ```markdown
+  ![Desktop View](/assets/img/sample/mockup.png){: .normal}
+  ```
+
+- **Float to the left**
+
+  ```markdown
+  ![Desktop View](/assets/img/sample/mockup.png){: .left}
+  ```
+
+- **Float to the right**
+
+  ```markdown
+  ![Desktop View](/assets/img/sample/mockup.png){: .right}
+  ```
+
+**Limitation**: Once you specify the position of an image, it is forbidden to add the image caption.
+
+### CDN URL
+
+If you host the images on the CDN, you can save the time of repeatedly writing the CDN url by assigning the variable `img_cdn` of `_config.yml` file:
+
+```yaml
+img_cdn: https://cdn.com
+```
+
+Once `img_cdn` is assigned, the CDN url will be added to the path of all images (images of site avatar and posts) starting with `/`.
+
+For instance, when using images:
+
+```markdown
+![The flower](/path/to/flower.png)
+```
+
+The parsing result will automatically add the CDN prefix `https://cdn.com` before the image path:
+
+```html
+<img src="https://cdn.com/path/to/flower.png" alt="The flower">
+```
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ## Pinned Posts
 
@@ -145,10 +279,16 @@ pin: true
 ---
 ```
 
+<<<<<<< HEAD
 
 ## Code Block
 
 Markdown symbols <code class="highlighter-rouge">```</code> can easily create a code block as following examples.
+=======
+## Code Block
+
+Markdown symbols ```` ``` ```` can easily create a code block as following examples.
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ```
 This is a common code snippet, without syntax highlight and line number.
@@ -156,7 +296,11 @@ This is a common code snippet, without syntax highlight and line number.
 
 ## Specific Language
 
+<<<<<<< HEAD
 Using <code class="highlighter-rouge">```language</code> you will get code snippets with line Numbers and syntax highlight.
+=======
+Using ```` ```language ```` you will get code snippets with line numbers and syntax highlight.
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 > **Note**: The Jekyll style `{% raw %}{%{% endraw %} highlight LANGUAGE {% raw %}%}{% endraw %}` or `{% raw %}{%{% endraw %} highlight LANGUAGE linenos {% raw %}%}{% endraw %}` are not allowed to be used in this theme !
 
@@ -169,7 +313,11 @@ items:
       quantity:  4
 ```
 
+<<<<<<< HEAD
 #### Liquid Codes
+=======
+### Liquid Codes
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 If you want to display the **Liquid** snippet, surround the liquid code with `{% raw %}{%{% endraw %} raw {%raw%}%}{%endraw%}` and `{% raw %}{%{% endraw %} endraw {%raw%}%}{%endraw%}` .
 
@@ -181,7 +329,10 @@ If you want to display the **Liquid** snippet, surround the liquid code with `{%
 ```
 {% endraw %}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 ## Learn More
 
 For more knowledge about Jekyll posts, visit the [Jekyll Docs: Posts](https://jekyllrb.com/docs/posts/).

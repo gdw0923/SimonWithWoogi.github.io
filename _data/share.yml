@@ -1,5 +1,6 @@
 #  Sharing options at the bottom of the post.
 #  Icons from <https://fontawesome.com/>
+<<<<<<< HEAD
 #
 #  v2.1
 #  https://github.com/cotes2020/jekyll-theme-chirpy
@@ -7,6 +8,8 @@
 #  MIT Licensed
 
 label: "Share"
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 platforms:
   -

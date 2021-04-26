@@ -1,15 +1,19 @@
 <!--
   The paginator for post list on HomgPage.
+<<<<<<< HEAD
 
   v2.1
   https://github.com/cotes2020/jekyll-theme-chirpy
   © 2020 Cotes Chung
   MIT License
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 -->
 
 <ul class="pagination mt-4 mb-0 pl-lg-2">
   <!-- left arrow -->
   {% if paginator.previous_page %}
+<<<<<<< HEAD
   <li class="page-item">
     <a class="page-link btn-box-shadow" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
       <i class="fas fa-angle-left"></i>
@@ -21,6 +25,17 @@
   </li>
   {% endif %}
   <!-- endof left arrow -->
+=======
+    {% assign prev_url = paginator.previous_page_path | relative_url %}
+  {% else %}
+    {% assign prev_url = "#" %}
+  {% endif %}
+  <li class="page-item {% unless paginator.previous_page %}disabled{% endunless %}">
+    <a class="page-link btn-box-shadow" href="{{ prev_url }}" aria-label="previous-page">
+      <i class="fas fa-angle-left"></i>
+    </a>
+  </li>
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   <!-- page numbers -->
   {% assign left_ellipsis = false %}
@@ -51,6 +66,7 @@
     {% endif %}
 
     {% if show %}
+<<<<<<< HEAD
         <!-- show number -->
         <li class="page-item {% if i == paginator.page %} active{% endif %}">
           <a class="page-link btn-box-shadow" href="{{ site.baseurl }}/{% if i > 1%}page{{ i }}/{% endif %}">{{ i }}</a>
@@ -69,10 +85,31 @@
           {% assign right_ellipsis = true %}
         {% endif %}
       {% endif %}
+=======
+      <!-- show number -->
+      <li class="page-item {% if i == paginator.page %} active{% endif %}">
+        <a class="page-link btn-box-shadow" href="{{ site.baseurl }}/{% if i > 1%}page{{ i }}/{% endif %}">{{ i }}</a>
+      </li>
+    {% else %}
+      <!-- hide number -->
+      {% if i < pre and left_ellipsis == false %}
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        {% assign left_ellipsis = true %}
+      {% elsif i > next and right_ellipsis == false %}
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        {% assign right_ellipsis = true %}
+      {% endif %}
+    {% endif %}
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   {% endfor %}
 
   <!-- right arrow -->
+<<<<<<< HEAD
   {% if paginator.next_page %}
   <li class="page-item">
     <a class="page-link btn-box-shadow" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
@@ -86,3 +123,17 @@
   {% endif %}
 
 </ul> <!-- .pagination -->
+=======
+  {% if paginator.next_page_path %}
+    {% assign next_url = paginator.next_page_path | relative_url %}
+  {% else %}
+    {% assign next_url = "#" %}
+  {% endif %}
+  <li class="page-item {% unless paginator.next_page_path %}disabled{% endunless %}">
+    <a class="page-link btn-box-shadow" href="{{ next_url }}" aria-label="next-page">
+      <i class="fas fa-angle-right"></i>
+    </a>
+  </li>
+
+</ul> <!-- .pagination -->
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

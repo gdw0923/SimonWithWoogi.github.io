@@ -1,13 +1,17 @@
 /*
 * This script make #search-result-wrapper switch to unloaded or shown automatically.
+<<<<<<< HEAD
 * v2.0
 * https://github.com/cotes2020/jekyll-theme-chirpy
 * © 2018-2019 Cotes Chung
 * MIT License
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 */
 
 $(function() {
 
+<<<<<<< HEAD
   var btnSbTrigger = $("#sidebar-trigger");
   var btnSearchTrigger = $("#search-trigger");
   var btnCancel = $("#search-cancel");
@@ -29,6 +33,27 @@ $(function() {
     return {
       block() {
         offset = $(window).scrollTop();
+=======
+  const btnSbTrigger = $("#sidebar-trigger");
+  const btnSearchTrigger = $("#search-trigger");
+  const btnCancel = $("#search-cancel");
+  const btnClear = $("#search-cleaner");
+
+  const main = $("#main");
+  const topbarTitle = $("#topbar-title");
+  const searchWrapper = $("#search-wrapper");
+  const resultWrapper = $("#search-result-wrapper");
+  const results = $("#search-results");
+  const input = $("#search-input");
+  const hints = $("#search-hints");
+
+  const scrollBlocker = (function () {
+    let offset = 0;
+    return {
+      block() {
+        offset = window.scrollY;
+        $("html,body").scrollTop(0);
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       },
       release() {
         $("html,body").scrollTop(offset);
@@ -39,7 +64,14 @@ $(function() {
     };
   }());
 
+<<<<<<< HEAD
   var mobileSearchBar = (function() {
+=======
+
+  /*--- Actions in small screens (Sidebar unloaded) ---*/
+
+  const mobileSearchBar = (function () {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     return {
       on() {
         btnSbTrigger.addClass("unloaded");
@@ -58,6 +90,7 @@ $(function() {
     };
   }());
 
+<<<<<<< HEAD
   var resultSwitch = (function() {
     var visable = false;
 
@@ -73,11 +106,29 @@ $(function() {
       },
       off() {
         if (visable) {
+=======
+  const resultSwitch = (function () {
+    let visible = false;
+
+    return {
+      on() {
+        if (!visible) {
+          // the block method must be called before $(#main) unloaded.
+          scrollBlocker.block();
+          resultWrapper.removeClass("unloaded");
+          main.addClass("unloaded");
+          visible = true;
+        }
+      },
+      off() {
+        if (visible) {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
           results.empty();
           if (hints.hasClass("unloaded")) {
             hints.removeClass("unloaded");
           }
           resultWrapper.addClass("unloaded");
+<<<<<<< HEAD
           btnClear.removeClass("visable");
           main.removeClass("hidden");
 
@@ -89,6 +140,20 @@ $(function() {
       },
       isVisable() {
         return visable;
+=======
+          btnClear.removeClass("visible");
+          main.removeClass("unloaded");
+
+          // now the release method must be called after $(#main) display
+          scrollBlocker.release();
+
+          input.val("");
+          visible = false;
+        }
+      },
+      isVisible() {
+        return visible;
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       }
     };
 
@@ -130,7 +195,11 @@ $(function() {
         resultSwitch.on();
 
         if (!btnClear.hasClass("visible")) {
+<<<<<<< HEAD
           btnClear.addClass("visable");
+=======
+          btnClear.addClass("visible");
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
         }
 
         if (isMobileView()) {
@@ -149,7 +218,11 @@ $(function() {
       resultSwitch.off();
     }
     input.focus();
+<<<<<<< HEAD
     btnClear.removeClass("visable");
+=======
+    btnClear.removeClass("visible");
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
   });
 
 });

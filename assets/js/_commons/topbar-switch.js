@@ -1,17 +1,33 @@
 /*
  * Hide Header on scroll down
+<<<<<<< HEAD
  * v2.0
  * https://github.com/cotes2020/jekyll-theme-chirpy
  * © 2018-2019 Cotes Chung
  * MIT License
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
  */
 
 $(function() {
 
+<<<<<<< HEAD
   var didScroll;
   var lastScrollTop = 0;
   var delta = 5;
   var topbarHeight = $("#topbar-wrapper").outerHeight();
+=======
+  const topbarWrapper = $("#topbar-wrapper");
+  const toc = $("#toc-wrapper");
+  const access = $(".access");
+  const searchInput = $("#search-input");
+
+  let didScroll;
+  let lastScrollTop = 0;
+
+  const delta = 5;
+  const topbarHeight = topbarWrapper.outerHeight();
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   function hasScrolled() {
     var st = $(this).scrollTop();
@@ -23,6 +39,7 @@ $(function() {
 
     if (st > lastScrollTop && st > topbarHeight) {
       /* Scroll Down */
+<<<<<<< HEAD
       $("#topbar-wrapper").removeClass("topbar-down").addClass("topbar-up");
 
       if ($("#toc-wrapper").length > 0) {
@@ -47,6 +64,30 @@ $(function() {
         if ($(".access").length > 0) {
           $(".access").addClass("topbar-down");
         }
+=======
+      topbarWrapper.removeClass("topbar-down").addClass("topbar-up");
+
+      if (toc.length > 0) {
+        toc.removeClass("topbar-down");
+      }
+
+      if (access.length > 0) {
+        access.removeClass("topbar-down");
+      }
+
+      if (searchInput.is(":focus")) {
+        searchInput.blur(); /* remove focus */
+      }
+
+    } else if (st + $(window).height() < $(document).height()) {
+      /* Scroll Up */
+      topbarWrapper.removeClass("topbar-up").addClass("topbar-down");
+      if (toc.length > 0) {
+        toc.addClass("topbar-down");
+      }
+      if (access.length > 0) {
+        access.addClass("topbar-down");
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       }
     }
 
@@ -66,4 +107,8 @@ $(function() {
     }
   }, 250);
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

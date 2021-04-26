@@ -1,3 +1,16 @@
+<<<<<<< HEAD
  User-agent: *
  Allow: /
  Sitemap: {{ '/sitemap.xml' | relative_url | prepend: site.url }}
+=======
+---
+permalink: robots.txt
+# The robots rules
+---
+
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

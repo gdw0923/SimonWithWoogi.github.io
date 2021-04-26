@@ -3,7 +3,11 @@ title: MATLAB 적대적 탐색을 이해하여 Tic-Tac-Toe를 구현해보자
 author: Simon Anderson
 date: 2020-10-04 19:51:00 +0800
 categories: [MATLAB, Applied]
+<<<<<<< HEAD
 tags: [MATLAB,Java, DeepLearning, Algorithm, DataStructure, Game]
+=======
+tags: [MATLAB, java, DeepLearning, Algorithm, DataStructure, Game]
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 image: /assets/img/MATLAB/4_Preview.png
 math: true
 ---

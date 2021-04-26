@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 
 # Run jekyll site at http://127.0.0.1:4000
@@ -135,3 +136,10 @@ while (($#)); do
 done
 
 main
+=======
+#!/usr/bin/env bash
+#
+# Run jekyll serve and then launch the site
+
+bundle exec jekyll s -H 0.0.0.0 -l
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
