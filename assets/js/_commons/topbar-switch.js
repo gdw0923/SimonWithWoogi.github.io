@@ -1,9 +1,22 @@
 /*
  * Hide Header on scroll down
+<<<<<<< HEAD
+ * v2.0
+ * https://github.com/cotes2020/jekyll-theme-chirpy
+ * © 2018-2019 Cotes Chung
+ * MIT License
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
  */
 
 $(function() {
 
+<<<<<<< HEAD
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var topbarHeight = $("#topbar-wrapper").outerHeight();
+=======
   const topbarWrapper = $("#topbar-wrapper");
   const toc = $("#toc-wrapper");
   const access = $(".access");
@@ -14,6 +27,7 @@ $(function() {
 
   const delta = 5;
   const topbarHeight = topbarWrapper.outerHeight();
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   function hasScrolled() {
     var st = $(this).scrollTop();
@@ -25,6 +39,32 @@ $(function() {
 
     if (st > lastScrollTop && st > topbarHeight) {
       /* Scroll Down */
+<<<<<<< HEAD
+      $("#topbar-wrapper").removeClass("topbar-down").addClass("topbar-up");
+
+      if ($("#toc-wrapper").length > 0) {
+        $("#toc-wrapper").removeClass("topbar-down");
+      }
+
+      if ($(".access").length > 0) {
+        $(".access").removeClass("topbar-down");
+      }
+
+      if ($("#search-input").is(":focus")) {
+        $("#search-input").blur(); /* remove focus */
+      }
+
+    } else {
+      /* Scroll Up */
+      if (st + $(window).height() < $(document).height()) {
+        $("#topbar-wrapper").removeClass("topbar-up").addClass("topbar-down");
+        if ($("#toc-wrapper").length > 0) {
+          $("#toc-wrapper").addClass("topbar-down");
+        }
+        if ($(".access").length > 0) {
+          $(".access").addClass("topbar-down");
+        }
+=======
       topbarWrapper.removeClass("topbar-down").addClass("topbar-up");
 
       if (toc.length > 0) {
@@ -47,6 +87,7 @@ $(function() {
       }
       if (access.length > 0) {
         access.addClass("topbar-down");
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       }
     }
 
@@ -66,4 +107,8 @@ $(function() {
     }
   }, 250);
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

@@ -1,11 +1,25 @@
 {% comment %}
   Get the last 5 posts from lastmod list.
+<<<<<<< HEAD
+  v2.2
+  https://github.com/cotes2020/jekyll-theme-chirpy
+  © 2020 Cotes Chung
+  MIT License
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 {% endcomment %}
 
 {% assign MAX_SIZE = 5 %}
 
 {% assign all_list = "" | split: "" %}
 
+<<<<<<< HEAD
+{% for entry in site.data.updates %}
+  {% capture elem %}
+    {{- entry.lastmod -}}::{{- entry.filename -}}
+  {% endcapture %}
+  {% assign all_list = all_list | push: elem %}
+=======
 {% for post in site.posts %}
   {% if post.last_modified_at %}
     {% capture elem %}
@@ -13,6 +27,7 @@
     {% endcapture %}
     {% assign all_list = all_list | push: elem %}
   {% endif %}
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 {% endfor %}
 
 {% assign all_list = all_list | sort | reverse %}

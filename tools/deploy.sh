@@ -1,6 +1,17 @@
+<<<<<<< HEAD
+#!/bin/bash
+#
+# Deploy the content of _site to 'origin/<pages_branch>'
+#
+# v2.5
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2020 Cotes Chung
+# Published under MIT License
+=======
 #!/usr/bin/env bash
 #
 # Deploy the content of _site to 'origin/<pages_branch>'
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 set -eu
 
@@ -10,11 +21,14 @@ _no_branch=false
 _backup_dir="$(mktemp -d)"
 
 init() {
+<<<<<<< HEAD
+=======
   if [[ -z ${GITHUB_ACTION+x} ]]; then
     echo "ERROR: This script is not allowed to run outside of GitHub Action."
     exit -1
   fi
 
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
   if [[ -z $(git branch -av | grep "$PAGES_BRANCH") ]]; then
     _no_branch=true
     git checkout -b "$PAGES_BRANCH"

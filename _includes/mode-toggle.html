@@ -1,8 +1,20 @@
 <!--
   Switch the mode between dark and light.
+<<<<<<< HEAD
+
+  v2.1
+  https://github.com/cotes2020/jekyll-theme-chirpy
+  © 2020 Cotes Chung
+  MIT License
+-->
+
+<i class="mode-toggle fas fa-sun" dark-mode-invisible></i>
+<i class="mode-toggle fas fa-moon" light-mode-invisible></i>
+=======
 -->
 
 <i class="mode-toggle fas fa-adjust"></i>
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 <script type="text/javascript">
 
@@ -12,8 +24,13 @@
     static get LIGHT_MODE() { return "light"; }
 
     constructor() {
+<<<<<<< HEAD
+      if (this.mode != null) {
+        if (this.mode == ModeToggle.DARK_MODE) {
+=======
       if (this.hasMode) {
         if (this.isDarkMode) {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
           if (!this.isSysDarkPrefer) {
             this.setDark();
           }
@@ -28,8 +45,13 @@
 
       /* always follow the system prefers */
       this.sysDarkPrefers.addListener(function() {
+<<<<<<< HEAD
+        if (self.mode != null) {
+          if (self.mode == ModeToggle.DARK_MODE) {
+=======
         if (self.hasMode) {
           if (self.isDarkMode) {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
             if (!self.isSysDarkPrefer) {
               self.setDark();
             }
@@ -42,8 +64,11 @@
 
           self.clearMode();
         }
+<<<<<<< HEAD
+=======
 
         self.updateMermaid();
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       });
 
     } /* constructor() */
@@ -70,12 +95,22 @@
 
     get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; }
 
+<<<<<<< HEAD
+    get isLightkMode() { return this.mode == ModeToggle.LIGHT_MODE; }
+=======
     get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; }
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
     get hasMode() { return this.mode != null; }
 
     get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); }
 
+<<<<<<< HEAD
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightkMode) {
+=======
     /* get the current mode on screen */
     get modeStatus() {
       if (this.isDarkMode
@@ -107,6 +142,7 @@
       if (this.hasMode) {
         if (this.isSysDarkPrefer) {
           if (this.isLightMode) {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
             this.clearMode();
           } else {
             this.setLight();
@@ -128,8 +164,11 @@
         }
       }
 
+<<<<<<< HEAD
+=======
       this.updateMermaid();
 
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     } /* flipMode() */
 
   } /* ModeToggle */
@@ -137,9 +176,16 @@
   let toggle = new ModeToggle();
 
   $(".mode-toggle").click(function() {
+<<<<<<< HEAD
+    toggle.flipMode();
+  });
+
+</script>
+=======
 
     toggle.flipMode();
 
   });
 
 </script>
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
