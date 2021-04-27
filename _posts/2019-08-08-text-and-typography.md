@@ -5,27 +5,6 @@ date: 2019-08-08 11:33:00 +0800
 categories: [Blogging, Demo]
 tags: [typography]
 math: true
-<<<<<<< HEAD
-image: /assets/img/sample/devices-mockup.png
----
-
-This Jekyll template totally compatible with Markdown syntax. Now, let's have a look at the text and typography.
-
-
-## Titles
-
----
-
-# H1
-
-<h2 data-toc-skip>H2</h2>
-
-<h3 data-toc-skip>H3</h3>
-
-<h4>H4</h4>
-
----
-=======
 mermaid: true
 image:
   src: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/commons/devices-mockup.png
@@ -45,7 +24,6 @@ This post is to show Markdown syntax rendering on [**Chirpy**](https://github.co
 <h4>H4 - heading</h4>
 ---
 <br>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ## Paragraph
 
@@ -61,23 +39,6 @@ Beside the lake, beneath the trees,
 
 Fluttering and dancing in the breeze.
 
-<<<<<<< HEAD
-## List
-
-### Ordered list
-
-1. first item
-2. second item
-3. third item
-
-### Unordered list
-
-- item 1
-	- sub item 1
-	- sub item 2
-
-- item 2
-=======
 ## Lists
 
 ### Ordered list
@@ -110,7 +71,6 @@ Sun
 Moon
 : the natural satellite of the earth, visible by reflected light from the sun
 
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ## Block Quote
 
@@ -118,40 +78,19 @@ Moon
 
 ## Tables
 
-<<<<<<< HEAD
-| Company                      | contact          | Country |
-=======
 | Company                      | Contact          | Country |
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 |:-----------------------------|:-----------------|--------:|
 | Alfreds Futterkiste          | Maria Anders     | Germany |
 | Island Trading               | Helen Bennett    | UK      |
 | Magazzini Alimentari Riuniti | Giovanni Rovelli | Italy   |
 
-<<<<<<< HEAD
-## Link
-=======
 ## Links
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 <http://127.0.0.1:4000>
 
 
 ## Footnote
 
-<<<<<<< HEAD
-Click the hook will locate the footnote[^footnote].
-
-
-## Image
-
-![Desktop View](/assets/img/sample/mockup.png)
-
-
-## Inline code
-
-This is an example of `Inline Code`.
-=======
 Click the hook will locate the footnote[^footnote], and here is another footnote[^fn-nth-2].
 
 
@@ -201,7 +140,6 @@ _400px image width_
   cherry :active, c, after b a, 1d
 ```
 
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ## Mathematics
 
@@ -209,13 +147,6 @@ The mathematics powered by [**MathJax**](https://www.mathjax.org/):
 
 $$ \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6} $$
 
-<<<<<<< HEAD
-When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are
-
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-## Code Snippet
-=======
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
@@ -227,7 +158,6 @@ This is an example of `Inline Code`.
 
 
 ## Code block
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 ### Common
 
@@ -240,17 +170,6 @@ This is a common code snippet, without syntax highlight and line number.
 #### Console
 
 ```console
-<<<<<<< HEAD
-$ date
-Sun Nov  3 15:11:12 CST 2019
-```
-
-
-#### Terminal
-
-```terminal
-=======
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 $ env |grep SHELL
 SHELL=/usr/local/bin/bash
 PYENV_SHELL=bash
@@ -284,43 +203,6 @@ fi;
 ```
 {% endraw %}
 
-<<<<<<< HEAD
-#### HTML
-
-```html
-<div class="sidenav">
-  <a href="#contact">Contact</a>
-  <button class="dropdown-btn">Dropdown
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-  <a href="#contact">Search</a>
-</div>
-```
-
-**Horizontal Scrolling**
-
-```html
-<div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading" id="{{ category_name }}">
-      <i class="far fa-folder"></i>
-      <p>This is a very long long long long long long long long long long long long long long long long long long long long long line.</p>
-      </a>
-    </div>
-  </div>
-</div>
-```
-
-
-## Reverse Footnote
-
-[^footnote]: The footnote source.
-=======
 #### Java
 
 ```java
@@ -336,4 +218,3 @@ private void writeObject(java.io.ObjectOutputStream s)
 
 [^footnote]: The footnote source
 [^fn-nth-2]: The 2nd footnote source
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

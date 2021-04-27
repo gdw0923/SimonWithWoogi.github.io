@@ -1,51 +1,23 @@
 ---
 layout: compress
 # Default layout
-<<<<<<< HEAD
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT Licensed
-=======
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 ---
 
 <!DOCTYPE html>
 
-<<<<<<< HEAD
-{% if site.lang %}
-  {% assign lang = site.lang | split: "_" | first %}
-{% else %}
-  {% assign lang = 'en' %}
-{% endif %}
-
-{% capture prefer_mode %}
-  {% if site.theme_mode != "dual" %}
-=======
 {% capture prefer_mode %}
   {% if site.theme_mode %}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     mode="{{ site.theme_mode }}"
   {% endif %}
 {% endcapture %}
 
-<<<<<<< HEAD
-<html lang="{{ lang }}" {{ prefer_mode }} >
-=======
 <html lang="{{ site.lang | default: "en-US" }}" {{ prefer_mode }}>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   {% include head.html %}
 
   <body data-spy="scroll" data-target="#toc">
 
-<<<<<<< HEAD
-    <div id="sidebar" class="d-flex flex-column">
-      {% include sidebar.html %}
-    </div>
-=======
     {% include sidebar.html %}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
     {% include topbar.html %}
 
@@ -62,18 +34,6 @@ layout: compress
 
     </div> <!-- #main-wrapper -->
 
-<<<<<<< HEAD
-    <div id="mask"></div>
-
-    <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    {% if jekyll.environment == 'production' %}
-      {% include google-analytics.html %}
-    {% endif %}
-
-=======
     {% if page.mermaid %}
       {% include mermaid.html %}
     {% endif %}
@@ -84,13 +44,8 @@ layout: compress
       <i class="fas fa-angle-up"></i>
     </a>
 
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     {% include search-loader.html %}
 
   </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

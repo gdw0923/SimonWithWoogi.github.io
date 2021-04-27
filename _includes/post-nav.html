@@ -1,24 +1,9 @@
 <!--
   Navigation buttons at the bottom of the post.
-<<<<<<< HEAD
-
-  v2.1
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2020 Cotes Chung
-  MIT License
-=======
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 -->
 
 <div class="post-navigation d-flex justify-content-between">
   {% if page.previous.url %}
-<<<<<<< HEAD
-  <a href="{{ site.baseurl }}{{ page.previous.url }}" class="btn btn-outline-primary">
-    <p>{{ page.previous.title }}</p>
-  </a>
-  {% else %}
-  <span class="btn btn-outline-primary disabled">
-=======
   <a href="{{ site.baseurl }}{{ page.previous.url }}" class="btn btn-outline-primary"
     prompt="{{ site.data.label.post.button.previous | default: 'previous' }}">
     <p>{{ page.previous.title }}</p>
@@ -26,19 +11,11 @@
   {% else %}
   <span class="btn btn-outline-primary disabled"
     prompt="{{ site.data.label.post.button.previous | default: 'previous' }}">
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     <p>-</p>
   </span>
   {% endif %}
 
   {% if page.next.url %}
-<<<<<<< HEAD
-  <a href="{{ site.baseurl }}{{page.next.url}}" class="btn btn-outline-primary">
-    <p>{{ page.next.title }}</p>
-  </a>
-  {% else %}
-  <span class="btn btn-outline-primary disabled">
-=======
   <a href="{{ site.baseurl }}{{page.next.url}}" class="btn btn-outline-primary"
     prompt="{{ site.data.label.post.button.next | default: 'next' }}">
     <p>{{ page.next.title }}</p>
@@ -46,13 +23,8 @@
   {% else %}
   <span class="btn btn-outline-primary disabled"
     prompt="{{ site.data.label.post.button.next | default: 'next' }}">
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     <p>-</p>
   </span>
   {% endif %}
 
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

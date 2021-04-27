@@ -1,13 +1,5 @@
 <!--
   Date format snippet
-<<<<<<< HEAD
-
-  v2.4.1
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2020 Cotes Chung
-  MIT License
--->
-=======
   See: /assets/js/_utils/timeage.js
 -->
 
@@ -15,41 +7,25 @@
 {% assign post_long_df = site.data.date_format.post.long | default: '%b %e, %Y' %}
 {% assign post_short_df = site.data.date_format.post.short | default: '%b %e' %}
 
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 <span class="timeago {% if include.class %}{{ include.class }}{% endif %}"
   {% if include.tooltip %}
     data-toggle="tooltip"
     data-placement="bottom"
-<<<<<<< HEAD
-    title="{{ include.date | date: site.data.date_format.tooltip }}"
-  {% endif %}>
-=======
     title="{{ include.date | date: tooltip_df }}"
   {% endif %}
 
   {% if include.prefix %}prefix="{{ include.prefix }} "{% endif%}
   {% if include.prep %}prep="{{ include.prep }}"{% endif %} >
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   {% assign this_year = site.time | date: "%Y" %}
   {% assign post_year = include.date | date: "%Y" %}
 
   {% if post_year == this_year %}
-<<<<<<< HEAD
-    {{ include.date | date: site.data.date_format.post.short }}
-  {% else %}
-    {{ include.date | date: site.data.date_format.post.long }}
-=======
     {{ include.date | date: post_short_df }}
   {% else %}
     {{ include.date | date: post_long_df }}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
   {% endif %}
 
   <i class="unloaded">{{ include.date | date_to_xmlschema }}</i>
 
-<<<<<<< HEAD
 </span>
-=======
-</span>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

@@ -1,38 +1,9 @@
 {% comment %}
   The trending tags list
-<<<<<<< HEAD
-  v2.0
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2019 Cotes Chung
-  MIT Licensed
-=======
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 {% endcomment %}
 
 {% assign MAX = 10 %}
 
-<<<<<<< HEAD
-{% capture tags_array %}
-  {% for tag in site.tags %}
-    {{ tag[1] | size }}::{{ tag[0] | replace: ' ', '-' }}
-  {% endfor %}
-{% endcapture %}
-
-{% assign all_tags = tags_array | split: " " | sort | reverse %}
-{% assign count = 0 %}
-
-{% assign trending_tags = "" | split: "" %}
-
-{% for iter in all_tags %}
-  {% assign count = count | plus: 1 %}
-  {% assign tag = iter | split: "::" | last  %}
-
-  {% assign trending_tags = trending_tags | push: tag %}
-
-  {% if count >= MAX %}
-    {% break %}
-  {% endif %}
-=======
 {% assign size_list = "" | split: "" %}
 {% assign tag_list = "" | split: "" %}
 
@@ -62,5 +33,4 @@
       {% endunless %}
     {% endif %}
   {% endfor %}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 {% endfor %}

@@ -1,49 +1,11 @@
 <!--
   The Pannel on right side (Desktop views)
-<<<<<<< HEAD
-  v2.0
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2017-2019 Cotes Chung
-  MIT License
-=======
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 -->
 
 <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down">
 
   <div class="access">
 
-<<<<<<< HEAD
-  {% if site.data.updates %}
-
-    {% include update-list.html %}
-
-    {% if update_list.size > 0 %}
-
-    <div id="access-lastmod" class="post">
-      <h3 data-toc-skip>
-        {{- site.data.label.panel.lastmod -}}
-      </h3>
-      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
-
-      {% for item in update_list %}
-        {% assign post_url = item | split: "::" | last | url_encode | prepend: "/posts/" | append: "/" %}
-        {% assign post = site.posts | where: "url", post_url | first %}
-
-        {% if post %}
-          {% assign url = post.url | relative_url %}
-          <li><a href="{{ url }}">{{ post.title }}</a></li>
-        {% endif %}
-
-      {% endfor %}
-
-      </ul>
-    </div><!-- #access-lastmod -->
-
-    {% endif %}
-
-  {% endif %} <!-- site.data.updates -->
-=======
   {% include update-list.html %}
 
   {% if update_list.size > 0 %}
@@ -63,23 +25,11 @@
     </div> <!-- #access-lastmod -->
 
   {% endif %}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
   {% include trending-tags.html %}
 
   {% if trending_tags.size > 0 %}
     <div id="access-tags">
-<<<<<<< HEAD
-      <h3 data-toc-skip>
-        {{- site.data.label.panel.trending_tags -}}
-      </h3>
-      <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-
-      {% for tag in trending_tags %}
-        {% capture url %}/tags/{{ tag | downcase | url_encode }}/{% endcapture %}
-        <a class="post-tag" href="{{ url | relative_url }}">{{ tag | replace: '-', ' ' }}</a>
-      {% endfor %}
-=======
       <span>{{- site.data.label.panel.trending_tags | default: 'Trending Tags' -}}</span>
       <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
 
@@ -88,21 +38,11 @@
         <a class="post-tag" href="{{ url | relative_url }}">{{ tag_name }}</a>
       {% endfor %}
 
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       </div>
     </div>
   {% endif %}
   </div> <!-- .access -->
 
-<<<<<<< HEAD
-  {% if page.layout == 'post' and site.toc and page.toc %}
-  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-    <h3 data-toc-skip class="pl-3 pt-2 mb-2">
-      {{- site.data.label.panel.toc -}}
-    </h3>
-    <nav id="toc" data-toggle="toc"></nav>
-  </div>
-=======
   {% if include.toc %}
     <!-- BS-toc.js will be loaded at medium priority -->
     <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
@@ -112,7 +52,6 @@
       </span>
       <nav id="toc" data-toggle="toc"></nav>
     </div>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
   {% endif %}
 
 </div> <!-- #panel-wrapper -->

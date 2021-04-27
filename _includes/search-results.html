@@ -1,39 +1,19 @@
 <!--
   The Search results
-<<<<<<< HEAD
-  v2.0
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2017-2019 Cotes Chung
-  MIT License
--->
-<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
-  <div class="col-12 col-xl-11 post-content">
-    <div id="search-hints">
-      <h4 class="text-muted mb-4">{{ site.data.label.panel.trending_tags }}</h4>
-=======
 -->
 <div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
   <div class="col-12 col-sm-11 post-content">
     <div id="search-hints">
       <h4 class="text-muted mb-4">{{ site.data.label.panel.trending_tags | default: 'Trending Tags' }}</h4>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
       {% include trending-tags.html %}
 
       {% for tag in trending_tags %}
-<<<<<<< HEAD
-        {% capture url %}/tags/{{ tag | downcase | url_encode }}/{% endcapture %}
-=======
         {% capture url %}/tags/{{ tag | slugify | url_encode }}/{% endcapture %}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
         <a class="post-tag" href="{{ url | relative_url }}">{{ tag | replace: '-', ' ' }}</a>
       {% endfor %}
 
     </div>
     <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
   </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413

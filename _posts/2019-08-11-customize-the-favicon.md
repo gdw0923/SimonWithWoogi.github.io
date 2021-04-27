@@ -11,30 +11,16 @@ In [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/), the image fi
 
 With a square image (PNG, JPG or GIF) in hand, open the site [*Favicon & App Icon Generator*](https://www.favicon-generator.org/) and upload your original image.
 
-<<<<<<< HEAD
-![upload-image](/assets/img/sample/upload-image.png)
-
-Click button <kbd>Create Favicon</kbd> and wait a moment for the website to generate the icons of various sizes automatically.
-
-![download-icons](/assets/img/sample/download-icons.png)
-=======
 ![upload-image](https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/posts/20190811/upload-image.png)
 
 Click button <kbd>Create Favicon</kbd> and wait a moment for the website to generate the icons of various sizes automatically.
 
 ![download-icons](https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/posts/20190811/download-icons.png){: width="600"}
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 
 Download the generated package, unzip and delete the following two from the extracted files:
 
 - browserconfig.xml
 - manifest.json
-<<<<<<< HEAD
- 
-Now, copy the rest image files (`.PNG` and `.ICO`) to cover the original one in folder `assets/img/favicons/`.
-
-Lastly, don't forget to rebuild your site so that the icon becomes your custom edition.
-=======
 
 Now, copy the remaining image files (`.PNG` and `.ICO`) from the extracted `.zip` file to cover the original files in the folder `assets/img/favicons/`.
 
@@ -51,4 +37,3 @@ The following table helps you understand the changes to the icon file:
 
 
 The next time you build the site, the icon will be replaced with a customized edition.
->>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
