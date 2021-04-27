@@ -1,9 +1,39 @@
 /*
 * This script make #search-result-wrapper switch to unloaded or shown automatically.
+<<<<<<< HEAD
+* v2.0
+* https://github.com/cotes2020/jekyll-theme-chirpy
+* © 2018-2019 Cotes Chung
+* MIT License
+=======
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 */
 
 $(function() {
 
+<<<<<<< HEAD
+  var btnSbTrigger = $("#sidebar-trigger");
+  var btnSearchTrigger = $("#search-trigger");
+  var btnCancel = $("#search-cancel");
+  var btnClear = $("#search-cleaner");
+
+  var main = $("#main");
+  var topbarTitle = $("#topbar-title");
+  var searchWrapper = $("#search-wrapper");
+  var resultWrapper = $("#search-result-wrapper");
+  var results = $("#search-results");
+  var input = $("#search-input");
+  var hints = $("#search-hints");
+
+
+  /*--- Actions in small screens (Sidebar unloaded) ---*/
+
+  var scrollBlocker = (function() {
+    var offset = 0;
+    return {
+      block() {
+        offset = $(window).scrollTop();
+=======
   const btnSbTrigger = $("#sidebar-trigger");
   const btnSearchTrigger = $("#search-trigger");
   const btnCancel = $("#search-cancel");
@@ -23,6 +53,7 @@ $(function() {
       block() {
         offset = window.scrollY;
         $("html,body").scrollTop(0);
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       },
       release() {
         $("html,body").scrollTop(offset);
@@ -33,10 +64,14 @@ $(function() {
     };
   }());
 
+<<<<<<< HEAD
+  var mobileSearchBar = (function() {
+=======
 
   /*--- Actions in small screens (Sidebar unloaded) ---*/
 
   const mobileSearchBar = (function () {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
     return {
       on() {
         btnSbTrigger.addClass("unloaded");
@@ -55,6 +90,23 @@ $(function() {
     };
   }());
 
+<<<<<<< HEAD
+  var resultSwitch = (function() {
+    var visable = false;
+
+    return {
+      on() {
+        if (!visable) {
+          resultWrapper.removeClass("unloaded");
+          main.addClass("hidden");
+
+          visable = true;
+          scrollBlocker.block();
+        }
+      },
+      off() {
+        if (visable) {
+=======
   const resultSwitch = (function () {
     let visible = false;
 
@@ -70,11 +122,25 @@ $(function() {
       },
       off() {
         if (visible) {
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
           results.empty();
           if (hints.hasClass("unloaded")) {
             hints.removeClass("unloaded");
           }
           resultWrapper.addClass("unloaded");
+<<<<<<< HEAD
+          btnClear.removeClass("visable");
+          main.removeClass("hidden");
+
+          input.val("");
+          visable = false;
+
+          scrollBlocker.release();
+        }
+      },
+      isVisable() {
+        return visable;
+=======
           btnClear.removeClass("visible");
           main.removeClass("unloaded");
 
@@ -87,6 +153,7 @@ $(function() {
       },
       isVisible() {
         return visible;
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
       }
     };
 
@@ -128,7 +195,11 @@ $(function() {
         resultSwitch.on();
 
         if (!btnClear.hasClass("visible")) {
+<<<<<<< HEAD
+          btnClear.addClass("visable");
+=======
           btnClear.addClass("visible");
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
         }
 
         if (isMobileView()) {
@@ -147,7 +218,11 @@ $(function() {
       resultSwitch.off();
     }
     input.focus();
+<<<<<<< HEAD
+    btnClear.removeClass("visable");
+=======
     btnClear.removeClass("visible");
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
   });
 
 });

@@ -3,7 +3,11 @@ title: Textmining, 현대자동차 여론을 조사해보자(1)
 author: Simon Anderson
 date: 2021-03-04 10:32:00 +0800
 categories: [Project, Data Science]
+<<<<<<< HEAD
+tags: [BigData, Cloud, AI, IoT, AIoT, TextMining, Python, C#, Naver, Hyundai, Kakao]
+=======
 tags: [BigData, Cloud, AI, IoT, AIoT, TextMining, Python, CSharp, Naver, Hyundai, Kakao]
+>>>>>>> 28fb78ad876485cc0a7120c304a1151bc72e5413
 image: /assets/img/Project/1_Preview.png
 math: true
 ---
