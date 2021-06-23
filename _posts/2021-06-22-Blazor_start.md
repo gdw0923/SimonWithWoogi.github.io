@@ -5,7 +5,6 @@ date: 2021-06-22 21:27:00 +0800
 categories: [FrameWork, Blazor]
 tags: [Blazor]
 image: /assets/img/Blazor/logo.png
-
 ---
 
 ## <span style="color:darkblue">Blazor</span>
@@ -18,9 +17,7 @@ image: /assets/img/Blazor/logo.png
 
 Java에는 대표적으로  Spring 이 있죠 ? 그런느낌이라고 보면 됩니다 !
 
-https://docs.microsoft.com/ko-kr/aspnet/core/blazor/?view=aspnetcore-5.0
-
-
+[Blazor 안내](https://docs.microsoft.com/ko-kr/aspnet/core/blazor/?view=aspnetcore-5.0)
 
 웹의 대표인 HTML, CSS, javascript 등 웹의 기초지식은 알고 계시단 전제하에 설명을 드려야 합니다.
 
